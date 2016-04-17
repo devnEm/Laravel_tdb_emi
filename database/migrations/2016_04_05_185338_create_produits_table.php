@@ -16,7 +16,7 @@ class CreateProduitsTable extends Migration
             $table->increments('id');
             $table->string('mois');
             $table->string('support');
-            $table->integer('indice');
+            $table->string('indice');
         });
     }
 

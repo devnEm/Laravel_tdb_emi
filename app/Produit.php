@@ -15,4 +15,11 @@ class Produit extends Model
         'mois', 'support', 'indice',
     ];
 
+    public $timestamps = false;
+
+    public function ventes()
+    {
+        return $this->hasMany('App\Vente');
+    }
+
 }
