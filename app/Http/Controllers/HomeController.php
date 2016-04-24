@@ -28,9 +28,7 @@ class HomeController extends Controller
 
     }
 
-    public function getVente(){
-        return view('vente');
-    }
+
 
 
 }

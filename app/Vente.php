@@ -12,7 +12,7 @@ class Vente extends Model
      * @var array
      */
     protected $fillable = [
-        'montant','user','produit'
+        'client','montant','user','produit'
     ];
 
     public function user()
@@ -20,8 +20,10 @@ class Vente extends Model
         return $this->hasOne('App\User');
     }
 
-    public function produits()
+    public function produit()
     {
         return $this->hasOne('App\Produit');
     }
+
+
 }
