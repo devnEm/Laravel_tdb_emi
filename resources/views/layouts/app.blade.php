@@ -44,7 +44,8 @@
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
                     <li><a href="{{ url('/home') }}">Home</a></li>
-                    <li><a href="{{ url('/vente') }}">Ajouter une vente</a></li>
+                    <li><a href="{{ url('/vente') }}">Mes Ventes</a></li>
+                    <li><a href="{{ url('/avenant') }}">Mon Avenant</a></li>
                 </ul>
                 @endif
                 <!-- Right Side Of Navbar -->

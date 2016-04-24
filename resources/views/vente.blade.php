@@ -14,12 +14,15 @@
                         <div class="panel-heading">Ajouter une vente</div>
 
                         <div class="panel-body">
+
                             {{ Form::open(array('url'=>'vente')) }}
 
                             {{ Form::label('montant','Montant',array('id'=>'','class'=>'form-group')) }}
                             {{ Form::number('montant','',array('id'=>'','class'=>'form-group')) }}
+                            {{ Form::label('client','Client',array('id'=>'','class'=>'form-group')) }}
+                            {{ Form::text('client','',array('id'=>'','class'=>'form-group')) }}
 
-                            {{ Form::submit('Save') }}
+                            {{ Form::submit('Enregistrer') }}
                             {{ Form::close() }}
 
                         </div>
@@ -45,7 +48,7 @@
 
                                     <td>{{ $vente->client }}</td>
 
-                                    <td>{{ $vente->produit_id }}</td>
+                                    <td>{{$vente->produit_id }}</td>
                                     <td>{{$vente->produit_id}}</td>
 
                                     <td>{{$vente->montant}}</td>

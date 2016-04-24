@@ -12,8 +12,8 @@
                     <h3>Application de gestion des objectifs commerciaux.</h3>
                     <label>Progression</label>
                     <div class="progress">
-                        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 25%">
-                            25%
+                        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 30%">
+                            30%
                         </div>
                     </div>
 
