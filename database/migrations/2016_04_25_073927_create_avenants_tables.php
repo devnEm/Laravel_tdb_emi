@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateVentesTable extends Migration
+class CreateAvenantsTables extends Migration
 {
     /**
      * Run the migrations.
@@ -12,12 +12,13 @@ class CreateVentesTable extends Migration
      */
     public function up()
     {
-        Schema::create('ventes', function (Blueprint $table) {
-            $table->increments('vente_id');
-            $table->string('client');
-            $table->integer('montant');
+        Schema::create('avenants', function (Blueprint $table) {
+            $table->increments('avenant_id');
+            $table->integer('objectif');
+            $table->integer('realise');
+            $table->integer('points');
             $table->integer('produit_id')->unsigned();
-            $table->foreign('produit_id')->references('produit_id')->on('produits');
+            $table->foreign('produit_id')->references('produit_id')->on('produits')->onDelete('cascade');
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
@@ -31,6 +32,6 @@ class CreateVentesTable extends Migration
      */
     public function down()
     {
-        Schema::drop('ventes');
+         Schema::drop('avenants');
     }
 }

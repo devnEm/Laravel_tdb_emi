@@ -12,14 +12,30 @@ class Produit extends Model
      * @var array
      */
     protected $fillable = [
-        'mois', 'support', 'indice',
+        'mois', 'support'
     ];
 
     public $timestamps = false;
 
     public function ventes()
     {
-        return $this->hasMany('App\Vente');
+        return $this->belongsTo('App\Vente');
     }
+
+    public function mois()
+    {
+        return $this->hasOne('App\Mois');
+    }
+    
+    public function support()
+    {
+        return $this->hasOne('App\Support');
+    }
+
+    public function avenant()
+    {
+        return $this->belongsTo('App\Avenant');
+    }
+
 
 }

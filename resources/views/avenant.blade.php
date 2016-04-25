@@ -5,44 +5,87 @@
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
 
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        Mon avenant
-                        <button class="btn-info pull-right">Editer</button>
+                <div class="col-md-6">
+
+                    <div class="panel panel-default">
+                        <div class="panel-heading">Ajouter un avenant</div>
+                        <div class="panel-body">
+
+                            <div class="form-group">
+
+                                {{Form::open(array('url' =>'avenant','method'=>'POST'))}}
+
+                                <div class="form-group">
+
+                                {{Form::label('mois_id','Mois : ')}}
+                                {{ Form::select('mois_id', $mois, null,['id'=>'id']) }}
+                                </div>
+
+                                <div class="form-group">
+
+                                {{Form::label('support_id','Support : ')}}
+                                {{ Form::select('support_id', $support, null,['support'=>'support']) }}
+
+                                </div>
+                                <div class="form-group">
+
+                                {{Form::label('objectif','Objectif : ')}}
+                                {{Form::number("objectif")}}
+
+                                </div>
+                                <div class="form-group">
+
+                                {{Form::label('points','Points : ')}}
+                                {{Form::number("points")}}
+
+                                </div>
+
+                                {{Form::submit('Ajouter')}}
+                                {{Form::close()}}
+
+                            </div>
+                        </div>
                     </div>
+                    
+                </div>
 
+                <div class="col-md-6">
 
-                    <div class="panel-body">
-                        <table class="table">
-                            <thead>
-                            <td>Mois</td>
-                            <td>Support</td>
-                            <td>Montant</td>
-                            <td>Points</td>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <td>Mars</td>
-                                <td>Evenements</td>
-                                <td>2000 €</td>
-                                <td>250</td>
-                            </tr>
-                            <tr>
-                                <td>Mars</td>
-                                <td>Gazette</td>
-                                <td>2000 €</td>
-                                <td>250</td>
-                            </tr>
-                            <tr>
-                                <td>Mars</td>
-                                <td>Verticaux</td>
-                                <td>2000 €</td>
-                                <td>250</td>
-                            </tr>
-                            </tbody>
-                        </table>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Mon avenant
+                            <button class="btn-info pull-right">Editer</button>
                         </div>
 
+
+                        <div class="panel-body">
+                            <table class="table">
+                                <thead>
+                                <td>N°</td>
+                                <td>Mois</td>
+                                <td>Support</td>
+                                <td>Montant</td>
+                                <td>Points</td>
+                                </thead>
+                                <tbody>
+
+
+                                @foreach($avenants as $avenant)
+                                <tr>
+                                    <td>{{$avenant->id}}</td>
+                                        
+                                    <td>{{$avenant->produit->mois}}</td>
+                                    <td>{{$avenant->produit->support}}</td>
+                                        
+                                    <td>{{$avenant->objectif}}</td>
+                                    <td>{{$avenant->points}}</td>
+                                </tr>
+                                @endforeach
+                                </tbody>
+                            </table>
+                            </div>
+
+                        </div>
                     </div>
                 </div>
             </div>

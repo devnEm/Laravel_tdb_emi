@@ -13,10 +13,11 @@ class CreateProduitsTable extends Migration
     public function up()
     {
         Schema::create('produits', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('mois');
-            $table->string('support');
-            $table->string('indice');
+            $table->increments('produit_id');
+            $table->integer('mois_id')->unsigned();
+            $table->foreign('mois_id')->references('mois_id')->on('mois');
+            $table->integer('support_id')->unsigned();
+            $table->foreign('support_id')->references('support_id')->on('supports');
         });
     }
 

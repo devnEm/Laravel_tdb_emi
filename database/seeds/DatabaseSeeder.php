@@ -4,6 +4,10 @@ use Illuminate\Database\Seeder;
 use App\User;
 use App\Produit;
 use App\Vente;
+use App\Mois;
+use App\Support;
+
+
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -21,30 +25,50 @@ class DatabaseSeeder extends Seeder
         ]);
 
 
+        Support::create([
+            'label'=>'Gazette'
+            ]);
+        Support::create([
+            'label'=>'Verticaux'
+            ]);
+        Support::create([
+            'label'=>'Evenement'
+            ]);
+
+
+        Mois::create([
+            'label'=>'Janvier'
+            ]);
+        Mois::create([
+            'label'=>'Fevrier'
+            ]);
+        Mois::create([
+            'label'=>'Mars'
+            ]);
+        Mois::create([
+            'label'=>'Avril'
+            ]);
+
+
         Produit::create([
-            'mois' => 'janvier',
-            'support'=> 'gazette',
-            'indice'=> '235',
+            'mois_id' => 1,
+            'support_id'=> 1
         ]);
         Produit::create([
-            'mois' => 'janvier',
-            'support'=> 'evenement',
-            'indice'=> '235',
+            'mois_id' => 1,
+            'support_id'=> 2
         ]);
         Produit::create([
-            'mois' => 'janvier',
-            'support'=> 'verticaux',
-            'indice'=> '235',
+            'mois_id' => 1,
+            'support_id'=> 3
         ]);
         Produit::create([
-            'mois' => 'fevrier',
-            'support'=> 'gazette',
-            'indice'=> '235',
+            'mois_id' => 2,
+            'support_id'=> 1
         ]);
         Produit::create([
-            'mois' => 'fevrier',
-            'support'=> 'verticaux',
-            'indice'=> '235',
+            'mois_id' => 2,
+            'support_id'=> 2
         ]);
 
 

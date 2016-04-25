@@ -20,9 +20,9 @@ class Vente extends Model
         return $this->hasOne('App\User');
     }
 
-    public function produit($id)
+    public function produit()
     {
-        return $this->hasOne('App\Produit');
+        return $this->hasOne('App\Produit')->findOrFail();
     }
 
 

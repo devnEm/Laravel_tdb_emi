@@ -26,6 +26,11 @@ class User extends Authenticatable
 
     public function ventes()
     {
-        return $this->hasMany('App\Vente');
+        return $this->belongsTo('App\Vente');
+    }
+
+    public function avenant()
+    {
+        return $this->belongsTo('App\Avenant');
     }
 }
