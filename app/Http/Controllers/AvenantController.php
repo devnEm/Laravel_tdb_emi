@@ -27,10 +27,17 @@ class AvenantController extends Controller
 
         $avenants= Avenant::select()->where('user_id',$user_id)->get();
 
+
         // echo('<pre>');
         // var_dump($avenants->count());
         // echo('</pre>');die;
         
+
+
+//         echo('<pre>');
+//         var_dump($avenants);
+//         echo('</pre>');die;
+
 
 
         return view('avenant',[
@@ -77,10 +84,16 @@ class AvenantController extends Controller
         $support_id=Support::select()
             ->where('id', ($request->input('support'))+1)->value('id');
 
+
         // echo('<pre>');
         // var_dump($support_id);
         // echo('</pre>');
         // die;
+
+//         echo('<pre>');
+//         var_dump($support_id);
+//         echo('</pre>');die;
+
 
         $produit_id = Produit::select()
             ->where('mois_id', $mois_id)
