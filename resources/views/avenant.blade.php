@@ -17,14 +17,14 @@
 
                                 <div class="form-group">
 
-                                {{Form::label('mois_id','Mois : ')}}
-                                {{ Form::select('mois_id', $mois, null,['id'=>'id']) }}
+                                {{Form::label('mois','Mois : ')}}
+                                {{ Form::select('mois', $mois_label, null,['label'=>'label']) }}
                                 </div>
 
                                 <div class="form-group">
 
-                                {{Form::label('support_id','Support : ')}}
-                                {{ Form::select('support_id', $support, null,['support'=>'support']) }}
+                                {{Form::label('support','Support : ')}}
+                                {{ Form::select('support', $support_label, null,['label'=>'label']) }}
 
                                 </div>
                                 <div class="form-group">
@@ -74,8 +74,8 @@
                                 <tr>
                                     <td>{{$avenant->id}}</td>
                                         
-                                        <td>{{$avenant->produit->mois->label}}</td>
-                                        <td>{{$avenant->produit->support->label}}</td>
+                                    <td>{{$avenant->produit->mois->label}}</td>
+                                    <td>{{$avenant->produit->support->label}}</td>
                                         
                                     <td>{{$avenant->objectif}}</td>
                                     <td>{{$avenant->points}}</td>

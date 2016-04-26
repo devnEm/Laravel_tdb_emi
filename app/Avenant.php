@@ -23,7 +23,7 @@ class Avenant extends Model
 
     public function produit()
     {
-        return $this->hasOne('App\Produit','id');
+        return $this->hasOne('App\Produit', 'id','produit_id');
     }
 
 }

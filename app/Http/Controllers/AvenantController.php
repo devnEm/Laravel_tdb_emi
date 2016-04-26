@@ -26,12 +26,15 @@ class AvenantController extends Controller
 
         $avenants= Avenant::all();
 
+        // echo('<pre>');
+        // var_dump($avenants->count());
+        // echo('</pre>');die;
         
 
 
         return view('avenant',[
-            'mois'=>$mois_label,
-            'support'=>$support_label,
+            'mois_label'=>$mois_label,
+            'support_label'=>$support_label,
             'avenants'=>$avenants
             
             ]);
@@ -59,28 +62,31 @@ class AvenantController extends Controller
         $avenant->user_id= $user_id;
 
         // echo('<pre>');
-        // var_dump($request->input('support_id'));
+        // var_dump($request->input('mois'));
         // echo('</pre>');die;
 
         $mois_id=Mois::select()
-            ->where('id', ($request->input('mois_id')+1))->pluck('id');
-
-        $support_id=Support::select()
-            ->where('id', ($request->input('support_id')+1))->pluck('id');
+            ->where('id', ($request->input('mois'))+1)->value('id');
 
         // echo('<pre>');
         // var_dump($mois_id);
-        // echo('</pre>');die;
+        // echo('</pre>');
+        // die;
 
-        $produit_id = Produit::select('id')
+        $support_id=Support::select()
+            ->where('id', ($request->input('support'))+1)->value('id');
+
+        // echo('<pre>');
+        // var_dump($support_id);
+        // echo('</pre>');
+        // die;
+
+        $produit_id = Produit::select()
             ->where('mois_id', $mois_id)
             ->where('support_id', $support_id)
             ->value('id');
 
-        // $produit_id=Produit::select('id')
-        // ->where('mois',$request->input('produit_mois'))
-        // ->where('support',$request->input('produit_support'));
-
+        
         // echo('<pre>');
         // var_dump($produit_id);
         // echo('</pre>');die;
