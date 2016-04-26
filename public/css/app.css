@@ -1,4 +1,14 @@
 @charset "UTF-8";
+input {
+  width: 50%; }
+
+label {
+  width: 30%; }
+
+.btn {
+  background: #16193B;
+  color: #FFFFF0; }
+
 /*!
  * Bootstrap v3.3.6 (http://getbootstrap.com)
  * Copyright 2011-2015 Twitter, Inc.

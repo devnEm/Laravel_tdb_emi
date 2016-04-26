@@ -13,3 +13,14 @@ $navbar-default-bg: $primaryBlue;
 $navbar-default-link-color : $myWhite;
 $navbar-default-link-hover-color : $fifthBlue;
 $navbar-default-brand-hover-color : $fifthBlue;
+
+input{
+  width: 50%;
+}
+label{
+  width: 30%;
+}
+.btn{
+  background: $primaryBlue;
+  color: $myWhite;
+}

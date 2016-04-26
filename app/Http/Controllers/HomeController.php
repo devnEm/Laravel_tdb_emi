@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 use App\Avenant;
 use App\Vente;
+use Auth;
 
 
 class HomeController extends Controller
@@ -28,9 +29,12 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $avenant=Avenant::all();
+        $user_id = Auth::user()->id;
 
-        return view('home',['avenant'=>$avenant]);
+        $ventes= Vente::select()->where('user_id',$user_id)->get();
+        $avenant= Avenant::select()->where('user_id',$user_id)->get();
+
+        return view('home',['avenant'=>$avenant,'ventes'=>$ventes]);
 
     }
 

@@ -15,6 +15,18 @@
 
                             {{ Form::open(array('url'=>'vente')) }}
 
+                            <div class="form-group">
+
+                                {{Form::label('mois','Mois : ')}}
+                                {{ Form::select('mois', $mois_label, null,['label'=>'label']) }}
+                            </div>
+                            <div class="form-group">
+
+                                {{Form::label('support','Support : ')}}
+                                {{ Form::select('support', $support_label, null,['label'=>'label']) }}
+
+                            </div>
+
                             <div class="form-group" >
                                 {{ Form::label('montant','Montant') }}
                                 {{ Form::number('montant') }}
@@ -23,17 +35,9 @@
                                 {{ Form::label('client','Client') }}
                                 {{ Form::text('client') }}
                             </div>
-                            <div class="form-group">
 
-                                {{Form::label('mois','Mois : ')}}
-                                {{ Form::select('mois', $mois_label, null,['label'=>'label']) }}
-                            
+                            {{ Form::submit('Enregistrer',['class'=>'btn pull-right']) }}
 
-                                {{Form::label('support','Support : ')}}
-                                {{ Form::select('support', $support_label, null,['label'=>'label']) }}
-
-                            </div>
-                            {{ Form::submit('Enregistrer') }}
                             {{ Form::close() }}
 
                         </div>

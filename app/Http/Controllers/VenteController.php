@@ -94,7 +94,7 @@ class VenteController extends Controller
         // echo($realise);
         // echo('</pre>');die;
 
-        $avenant=Avenant::select('realise')->where('produit_id',$produit_id)->increment('realise', $realise);
+        $avenant=Avenant::select('realise')->where('produit_id',$produit_id)->where('user_id',$user_id)->increment('realise', $realise);
         
         // echo('<pre>');
         // var_dump($avenant);
