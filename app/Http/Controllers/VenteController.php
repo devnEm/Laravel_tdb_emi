@@ -6,9 +6,15 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use Illuminate\Support\Facades\DB;
+use Validator;
+use Auth;
 
 use App\Produit;
 use App\Vente;
+use App\Mois;
+use App\Support;
+use App\Avenant;
+
 use Carbon\Carbon;
 
 class VenteController extends Controller
@@ -21,16 +27,17 @@ class VenteController extends Controller
      */
     public function create()
     {
-        $produits = Produit::all();
+        $mois_label= Mois::all()->pluck('label');
+        $support_label= Support::all()->pluck('label');
+
         $ventes= Vente::all();
 
-        $time =Carbon::now();
 
 //        echo ('<pre>');
 //        var_dump($ventes);
 //        echo ('</pre>');die;
 
-        return view('vente',['produits'=>$produits,'ventes'=>$ventes,'time'=>$time]);
+        return view('vente',['mois_label'=>$mois_label,'support_label'=>$support_label,'ventes'=>$ventes]);
     }
 
 
@@ -43,15 +50,57 @@ class VenteController extends Controller
      */
     public function store(Request $request)
     {
+        $user_id= Auth::user()->id;
 
-
-        $this->validate($request, [
-            'client'=>'required',
+        $rules=[
+            'client' => 'required',
             'montant' => 'required',
-            'mois' => 'required',
-            'support' => 'required',
-        ]);
+            'produit_id' => 'required'
+        ];
+ 
+        $validator= Validator::make($request->all(),$rules);
 
-        // Store the blog post...
+        $vente = new Vente();
+        $vente->client=$request->input('client');
+        $vente->montant=$request->input('montant');
+        $vente->user_id= $user_id;
+
+        $mois_id=Mois::select()
+            ->where('id', ($request->input('mois'))+1)->value('id');
+
+        $support_id=Support::select()
+            ->where('id', ($request->input('support'))+1)->value('id');
+
+        $produit_id = Produit::select()
+            ->where('mois_id', $mois_id)
+            ->where('support_id', $support_id)
+            ->value('id');
+        
+        $vente->produit_id=$produit_id;
+        
+        $vente->save();
+
+        /********************************
+        /
+        /     UPDATE AVENANT After Saving 
+        /
+        /*******************************/
+
+        $realise=intval($request->input('montant'));
+
+        // echo('<pre>');
+        // echo($realise);
+        // echo('</pre>');die;
+
+        $avenant=Avenant::select('realise')->where('produit_id',$produit_id)->increment('realise', $realise);
+        
+        // echo('<pre>');
+        // var_dump($avenant);
+        // echo('</pre>');die;
+        
+
+        
+
+        return redirect()->action('VenteController@create');
     }
 }

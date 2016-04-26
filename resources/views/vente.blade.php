@@ -3,9 +3,7 @@
 @section('content')
 
     <div class="container">
-        <div>
-            {{$time->toTimeString()}}
-        </div>
+        
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
 
@@ -17,11 +15,24 @@
 
                             {{ Form::open(array('url'=>'vente')) }}
 
-                            {{ Form::label('montant','Montant',array('id'=>'','class'=>'form-group')) }}
-                            {{ Form::number('montant','',array('id'=>'','class'=>'form-group')) }}
-                            {{ Form::label('client','Client',array('id'=>'','class'=>'form-group')) }}
-                            {{ Form::text('client','',array('id'=>'','class'=>'form-group')) }}
+                            <div class="form-group" >
+                                {{ Form::label('montant','Montant') }}
+                                {{ Form::number('montant') }}
+                            </div>
+                            <div class="form-group" >
+                                {{ Form::label('client','Client') }}
+                                {{ Form::text('client') }}
+                            </div>
+                            <div class="form-group">
 
+                                {{Form::label('mois','Mois : ')}}
+                                {{ Form::select('mois', $mois_label, null,['label'=>'label']) }}
+                            
+
+                                {{Form::label('support','Support : ')}}
+                                {{ Form::select('support', $support_label, null,['label'=>'label']) }}
+
+                            </div>
                             {{ Form::submit('Enregistrer') }}
                             {{ Form::close() }}
 
@@ -30,10 +41,10 @@
                 </div>
                 <div class="col-md-8">
                     <div class="panel panel-default">
-                        <div class="panel-heading">Mes Ventes</div>
+                        <div class="panel-heading">Toutes mes ventes</div>
 
                         <div class="panel-body">
-                            <h3>Toutes mes ventes</h3>
+                            
                             <table class="table">
                                 <thead>
                                 <td>Client</td>
@@ -48,8 +59,8 @@
 
                                     <td>{{ $vente->client }}</td>
 
-                                    <td>{{$vente->produit_id }}</td>
-                                    <td>{{$vente->produit_id}}</td>
+                                    <td>{{$vente->produit->mois->label }}</td>
+                                    <td>{{$vente->produit->support->label}}</td>
 
                                     <td>{{$vente->montant}}</td>
                                         {{--<td><button>supprimer</button><button>Editer</button></td>--}}

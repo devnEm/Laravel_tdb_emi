@@ -22,7 +22,7 @@ class Vente extends Model
 
     public function produit()
     {
-        return $this->hasOne('App\Produit');
+        return $this->hasOne('App\Produit','id','produit_id');
     }
 
 
