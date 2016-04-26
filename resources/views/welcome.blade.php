@@ -16,6 +16,11 @@
                             60%
                         </div>
                     </div>
+                    <article>
+                        <h4>On avance</h4>
+                        <p>Il reste encore à intégrer les fonctions de suppression et certainement quelques fonctionnalités oubliées.</p>
+                        <p>Mais surtout il n'y a pas le retour <strong>en fonction des Trimestres</strong>. J'envisage un filtrage des données et ....</p>
+                    </article>
 
                     </div>
                 </div>

@@ -82,7 +82,8 @@
                                     <tr>
                                         <td>{{$avenant->produit->mois->label}}</td>
                                         <td>{{$avenant->produit->support->label}}</td>
-                                        <td>{{(($avenant->objectif)-($avenant->realise))/($avenant->objectif)*100}} %</td>
+                                        <td><div class="progress">
+                                                <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:{{($avenant->realise)/($avenant->objectif)*100}}%">{{($avenant->realise)/($avenant->objectif)*100}} %</td>
                                         <td>{{($avenant->objectif)-($avenant->realise)}}</td>
                                     </tr>
                                     @endforeach
