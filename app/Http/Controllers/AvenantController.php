@@ -26,9 +26,10 @@ class AvenantController extends Controller
         $avenants= Avenant::all();
 
 
-        // echo('<pre>');
-        // var_dump($produits_avenant);
-        // echo('</pre>');die;
+
+//         echo('<pre>');
+//         var_dump($avenants);
+//         echo('</pre>');die;
 
 
         return view('avenant',[
@@ -70,9 +71,9 @@ class AvenantController extends Controller
         $support_id=Support::select()
             ->where('support_id', ($request->input('support_id')+1))->pluck('support_id');
 
-        // echo('<pre>');
-        // var_dump($mois_id);
-        // echo('</pre>');die;
+//         echo('<pre>');
+//         var_dump($support_id);
+//         echo('</pre>');die;
 
         $produit_id = Produit::select('produit_id')
             ->where('mois_id', $mois_id)

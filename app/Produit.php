@@ -34,7 +34,7 @@ class Produit extends Model
 
     public function avenant()
     {
-        return $this->belongsTo('App\Avenant');
+        return $this->belongsTo('App\Avenant','avenant_id');
     }
 
 

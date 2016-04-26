@@ -72,11 +72,11 @@
 
                                 @foreach($avenants as $avenant)
                                 <tr>
-                                    <td>{{$avenant->id}}</td>
-                                        
-                                    <td>{{$avenant->produit->mois}}</td>
-                                    <td>{{$avenant->produit->support}}</td>
-                                        
+                                    <td>{{$avenant->avenant_id}}</td>
+
+                                    <td>{{$avenant->produit_id}}</td>
+                                    <td>{{$avenant->produit_id}}</td>
+
                                     <td>{{$avenant->objectif}}</td>
                                     <td>{{$avenant->points}}</td>
                                 </tr>
