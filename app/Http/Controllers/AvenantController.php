@@ -19,12 +19,13 @@ class AvenantController extends Controller
 
     public function create()
     {
+        $user_id = Auth::user()->id;
 
         $mois_label= Mois::all()->pluck('label');
         $support_label= Support::all()->pluck('label');
 
 
-        $avenants= Avenant::all();
+        $avenants= Avenant::select()->where('user_id',$user_id)->get();
 
         // echo('<pre>');
         // var_dump($avenants->count());

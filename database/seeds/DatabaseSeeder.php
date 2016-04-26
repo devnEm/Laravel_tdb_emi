@@ -23,6 +23,11 @@ class DatabaseSeeder extends Seeder
             'email'     =>  'admin@example.com',
             'password'  =>  bcrypt('azerty'),
         ]);
+        User::create([
+            'name'      => 'devnem',
+            'email'     =>  'devnem@example.com',
+            'password'  =>  bcrypt('azerty'),
+        ]);
 
 
         Support::create([
@@ -96,6 +101,15 @@ class DatabaseSeeder extends Seeder
                 'points'=>250,
                 'produit_id'=> $i,
                 'user_id'=>1
+            ]);
+        }
+
+        for($i=1 ; $i<=36 ; $i++){
+            Avenant::create([
+                'objectif'=> 5000,
+                'points'=>400,
+                'produit_id'=> $i,
+                'user_id'=>2
             ]);
         }
 
