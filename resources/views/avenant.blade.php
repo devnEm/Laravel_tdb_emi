@@ -74,8 +74,8 @@
                                 <tr>
                                     <td>{{$avenant->id}}</td>
                                         
-                                    <td>{{$avenant->produit->mois}}</td>
-                                    <td>{{$avenant->produit->support}}</td>
+                                        <td>{{$avenant->produit->mois->label}}</td>
+                                        <td>{{$avenant->produit->support->label}}</td>
                                         
                                     <td>{{$avenant->objectif}}</td>
                                     <td>{{$avenant->points}}</td>

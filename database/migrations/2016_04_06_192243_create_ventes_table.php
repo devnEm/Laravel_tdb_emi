@@ -13,11 +13,11 @@ class CreateVentesTable extends Migration
     public function up()
     {
         Schema::create('ventes', function (Blueprint $table) {
-            $table->increments('vente_id');
+            $table->increments('id');
             $table->string('client');
             $table->integer('montant');
             $table->integer('produit_id')->unsigned();
-            $table->foreign('produit_id')->references('produit_id')->on('produits');
+            $table->foreign('produit_id')->references('id')->on('produits');
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();

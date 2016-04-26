@@ -13,7 +13,7 @@ class CreateMoisTables extends Migration
     public function up()
     {
          Schema::create('mois', function (Blueprint $table) {
-            $table->increments('mois_id');
+            $table->increments('id');
             $table->string('label');
         });
     }

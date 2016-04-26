@@ -18,12 +18,12 @@ class Avenant extends Model
 
     public function user()
     {
-        return $this->hasOne('App\User')->findOrFail();
+        return $this->hasOne('App\User');
     }
 
     public function produit()
     {
-        return $this->hasOne('App\Produit');
+        return $this->hasOne('App\Produit','id');
     }
 
 }

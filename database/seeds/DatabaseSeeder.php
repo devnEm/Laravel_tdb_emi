@@ -48,28 +48,47 @@ class DatabaseSeeder extends Seeder
         Mois::create([
             'label'=>'Avril'
             ]);
+        Mois::create([
+            'label'=>'Mai'
+            ]);
+        Mois::create([
+            'label'=>'Juin'
+            ]);
+        Mois::create([
+            'label'=>'Juillet'
+            ]);
+        Mois::create([
+            'label'=>'Aout'
+            ]);
+        Mois::create([
+            'label'=>'Septembre'
+            ]);
+        Mois::create([
+            'label'=>'Octobre'
+            ]);
+        Mois::create([
+            'label'=>'Novembre'
+            ]);
+        Mois::create([
+            'label'=>'Decembre'
+            ]);
 
+        for($i=1 ; $i<=12 ; $i++)
+        {
 
-        Produit::create([
-            'mois_id' => 1,
-            'support_id'=> 1
-        ]);
-        Produit::create([
-            'mois_id' => 1,
-            'support_id'=> 2
-        ]);
-        Produit::create([
-            'mois_id' => 1,
-            'support_id'=> 3
-        ]);
-        Produit::create([
-            'mois_id' => 2,
-            'support_id'=> 1
-        ]);
-        Produit::create([
-            'mois_id' => 2,
-            'support_id'=> 2
-        ]);
+            Produit::create([
+                'mois_id' => $i,
+                'support_id'=> 1
+            ]);
+            Produit::create([
+                'mois_id' => $i,
+                'support_id'=> 2
+            ]);
+            Produit::create([
+                'mois_id' => $i,
+                'support_id'=> 3
+            ]);
+        };
 
 
 

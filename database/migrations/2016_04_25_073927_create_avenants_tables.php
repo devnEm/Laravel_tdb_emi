@@ -13,12 +13,12 @@ class CreateAvenantsTables extends Migration
     public function up()
     {
         Schema::create('avenants', function (Blueprint $table) {
-            $table->increments('avenant_id');
+            $table->increments('id');
             $table->integer('objectif');
             $table->integer('realise');
             $table->integer('points');
             $table->integer('produit_id')->unsigned();
-            $table->foreign('produit_id')->references('produit_id')->on('produits')->onDelete('cascade');
+            $table->foreign('produit_id')->references('id')->on('produits')->onDelete('cascade');
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();

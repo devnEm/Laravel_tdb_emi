@@ -13,7 +13,7 @@ class CreateSupportTables extends Migration
     public function up()
     {
        Schema::create('supports', function (Blueprint $table) {
-            $table->increments('support_id');
+            $table->increments('id');
             $table->string('label');
         });
     }

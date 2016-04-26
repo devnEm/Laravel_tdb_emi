@@ -24,12 +24,12 @@ class Produit extends Model
 
     public function mois()
     {
-        return $this->hasOne('App\Mois');
+        return $this->hasOne('App\Mois','id');
     }
     
     public function support()
     {
-        return $this->hasOne('App\Support');
+        return $this->hasOne('App\Support','id');
     }
 
     public function avenant()

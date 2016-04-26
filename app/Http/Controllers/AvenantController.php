@@ -23,12 +23,10 @@ class AvenantController extends Controller
         $mois_label= Mois::all()->pluck('label');
         $support_label= Support::all()->pluck('label');
 
+
         $avenants= Avenant::all();
 
-
-        // echo('<pre>');
-        // var_dump($produits_avenant);
-        // echo('</pre>');die;
+        
 
 
         return view('avenant',[
@@ -65,19 +63,19 @@ class AvenantController extends Controller
         // echo('</pre>');die;
 
         $mois_id=Mois::select()
-            ->where('mois_id', ($request->input('mois_id')+1))->pluck('mois_id');
+            ->where('id', ($request->input('mois_id')+1))->pluck('id');
 
         $support_id=Support::select()
-            ->where('support_id', ($request->input('support_id')+1))->pluck('support_id');
+            ->where('id', ($request->input('support_id')+1))->pluck('id');
 
         // echo('<pre>');
         // var_dump($mois_id);
         // echo('</pre>');die;
 
-        $produit_id = Produit::select('produit_id')
+        $produit_id = Produit::select('id')
             ->where('mois_id', $mois_id)
             ->where('support_id', $support_id)
-            ->value('produit_id');
+            ->value('id');
 
         // $produit_id=Produit::select('id')
         // ->where('mois',$request->input('produit_mois'))
