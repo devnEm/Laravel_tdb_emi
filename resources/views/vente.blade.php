@@ -66,7 +66,7 @@
                                     <td>{{$vente->produit->mois->label }}</td>
                                     <td>{{$vente->produit->support->label}}</td>
 
-                                    <td>{{$vente->montant}}</td>
+                                    <td>{{number_format($vente->montant, 2, ',', ' ')}}</td>
                                         {{--<td><button>supprimer</button><button>Editer</button></td>--}}
 
                                 </tr>
