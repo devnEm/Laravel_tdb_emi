@@ -17,19 +17,19 @@
                                 <div class="panel-body">
                                     <label>Gazette</label>
                                     <div class="progress">
-                                        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="min-width: 4em;width: {{$percentTotalGazette}}%">
+                                        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow={{round($percentTotalGazette,2)}} aria-valuemin="0" aria-valuemax="100" style="min-width: 2em;width: {{$percentTotalGazette}}%">
                                             {{round($percentTotalGazette,2)}} %
                                         </div>
                                     </div>
                                     <label>Verticaux</label>
                                     <div class="progress">
-                                        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="min-width: 4em;width: {{$percentTotalVerticaux}}%">
+                                        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="{{round($percentTotalVerticaux,2)}}" aria-valuemin="0" aria-valuemax="100" style="min-width: 2em;width: {{$percentTotalVerticaux}}%">
                                             {{round($percentTotalVerticaux,2)}} %
                                         </div>
                                     </div>
                                     <label>Evenement</label>
                                     <div class="progress">
-                                        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="min-width: 4em;width: {{$percentTotalEvenement}}%">
+                                        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="min-width: 2em;width: {{$percentTotalEvenement}}%">
 {{round($percentTotalEvenement,2)}} %
                                         </div>
                                     </div>
@@ -43,8 +43,8 @@
                                 <div class="panel-body">
                                     <label>Total</label>
                                     <div class="progress">
-                                        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="2" aria-valuemax="100" style="min-width: 4em;width: {{($avenants->sum('realise'))/$avenants->sum('objectif')*100}}%">
-                                            {{round(($avenants->sum('realise'))/$avenants->sum('objectif')*100, 2)}} %
+                                        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="2" aria-valuemax="100" style="min-width: 2em;width: {{($avenants->sum('realise'))/$avenants->sum('objectif')*100}}%">
+                                            {{round(($avenants->sum('realise'))/$avenants->sum('objectif')*100, 2)}}%
                                         </div>
                                     </div>
                                     <table class="table">
@@ -84,7 +84,7 @@
                                         <td>{{$avenant->produit->mois->label}}</td>
                                         <td>{{$avenant->produit->support->label}}</td>
                                         <td><div class="progress">
-                                                <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="min-width: 4em;width:{{($avenant->realise)/($avenant->objectif)*100}}%">{{round(($avenant->realise)/($avenant->objectif)*100,2)}} %</td>
+                                                <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="min-width: 3em;width:{{($avenant->realise)/($avenant->objectif)*100}}%">{{round(($avenant->realise)/($avenant->objectif)*100,2)}} %</td>
                                         <td>{{number_format(($avenant->objectif)-($avenant->realise), 2, ',', ' ')}}</td>
                                     </tr>
                                     @endif

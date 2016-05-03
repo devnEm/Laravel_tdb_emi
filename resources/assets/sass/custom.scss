@@ -24,7 +24,21 @@ label{
   background: $primaryBlue;
   color: $myWhite;
 }
-td{
+.table>tbody>tr>td{
+	vertical-align: middle !important;
 	text-align:center;
 	width:25%;
+	height:25px;
 }
+.table>thead>tr>td{
+	vertical-align: middle !important;
+	text-align:center;
+	width:25%;
+	height:25px;
+	font-size:1.2em;
+}
+.progress{
+	margin-top: 20px;
+	
+
+	}

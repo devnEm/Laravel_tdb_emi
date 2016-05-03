@@ -9,9 +9,21 @@ label {
   background: #16193B;
   color: #FFFFF0; }
 
-td {
+.table > tbody > tr > td {
+  vertical-align: middle !important;
   text-align: center;
-  width: 25%; }
+  width: 25%;
+  height: 25px; }
+
+.table > thead > tr > td {
+  vertical-align: middle !important;
+  text-align: center;
+  width: 25%;
+  height: 25px;
+  font-size: 1.2em; }
+
+.progress {
+  margin-top: 20px; }
 
 /*!
  * Bootstrap v3.3.6 (http://getbootstrap.com)
