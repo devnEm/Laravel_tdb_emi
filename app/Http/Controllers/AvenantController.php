@@ -25,7 +25,7 @@ class AvenantController extends Controller
         $support_label= Support::all()->pluck('label');
 
 
-        $avenants= Avenant::select()->where('user_id',$user_id)->get();
+        $avenants= Avenant::select()->where('user_id',$user_id)->orderBy('produit_id','asc')->get();
 
 
         // echo('<pre>');
@@ -113,5 +113,14 @@ class AvenantController extends Controller
         return redirect()->action('AvenantController@create');
 
         
+    }
+
+    public function delete($v)
+    {
+        
+        $avenant = Avenant::where('id',$v)->delete();
+        
+
+        return redirect()->action('AvenantController@create');
     }
 }

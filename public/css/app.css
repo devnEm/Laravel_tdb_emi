@@ -9,6 +9,10 @@ label {
   background: #16193B;
   color: #FFFFF0; }
 
+td {
+  text-align: center;
+  width: 25%; }
+
 /*!
  * Bootstrap v3.3.6 (http://getbootstrap.com)
  * Copyright 2011-2015 Twitter, Inc.

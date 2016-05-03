@@ -21,9 +21,11 @@ Route::group(['middleware' => ['web']], function () {
 
     Route::get('/vente', 'VenteController@create');
     Route::post('/vente', 'VenteController@store');
+    Route::get('/vente/delete/{id}','VenteController@delete');
 
     Route::get('/avenant', 'AvenantController@create');
     Route::post('/avenant', 'AvenantController@store');
+    Route::get('/avenant/delete/{id}','AvenantController@delete');
 
 
 });

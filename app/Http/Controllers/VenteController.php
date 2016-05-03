@@ -105,4 +105,13 @@ class VenteController extends Controller
 
         return redirect()->action('VenteController@create');
     }
+
+     public function delete($v)
+    {
+        
+        $vente = Vente::where('id',$v)->delete();
+        
+
+        return redirect()->action('VenteController@create');
+    }
 }
