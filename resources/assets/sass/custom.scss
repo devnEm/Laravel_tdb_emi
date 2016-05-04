@@ -1,27 +1,35 @@
 @import "customColors";
 
-$body-bg: $thirdBlue;
+$body-bg:$grey2 ;
 $text-color: $primaryBlue;
 
 $panel-default-text : $myWhite;
-$panel-bg : $fouthBlue;
-$panel-default-heading-bg: $primaryBlue;
-$panel-inner-border: $fifthBlue;
-$panel-default-border: $secondBlue;
+$panel-bg : $myWhite;
+$panel-default-heading-bg: $greyInfopro;
+$panel-inner-border: $redInfopro;
+$panel-default-border: $redInfopro;
 
-$navbar-default-bg: $primaryBlue;
+$navbar-default-bg: $redInfopro;
 $navbar-default-link-color : $myWhite;
-$navbar-default-link-hover-color : $fifthBlue;
-$navbar-default-brand-hover-color : $fifthBlue;
+$navbar-default-link-hover-color : $redInfopro;
+$navbar-default-link-hover-bg:$myWhite;
+$navbar-default-brand-hover-color : $redInfopro;
+$navbar-default-brand-hover-bg:$myWhite;
+
+/*body{
+	background-image: url("../../../img/inforproMoniteur.jpg");
+}*/
 
 input{
   width: 50%;
 }
+
 label{
   width: 30%;
+  color:$redInfopro;
 }
 .btn{
-  background: $primaryBlue;
+  background: $greyInfopro;
   color: $myWhite;
 }
 .table>tbody>tr>td{
@@ -39,6 +47,9 @@ label{
 }
 .progress{
 	margin-top: 20px;
-	
+}
 
-	}
+.navbar-brand > img {
+
+	margin-top:-15px;
+}

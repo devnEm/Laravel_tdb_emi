@@ -1,21 +1,24 @@
-# Laravel : My Favorite Framework
+# Gestion des objectifs commerciaux
 
 [![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
 [![Total Downloads](https://poser.pugx.org/laravel/framework/d/total.svg)](https://packagist.org/packages/laravel/framework)
 [![Latest Stable Version](https://poser.pugx.org/laravel/framework/v/stable.svg)](https://packagist.org/packages/laravel/framework)
 [![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as authentication, routing, sessions, queueing, and caching.
+Concu sur la base de Laravel : 
 
-Laravel is accessible, yet powerful, providing tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
+Site fabriqué pour les besoins de mon épouse
 
-## Official Documentation
+La particularité reside dans l'abstraction du produit qui est une association de differents modeles.
 
-Documentation for the framework can be found on the [Laravel website](http://laravel.com/docs).
+## Laravel Documentation
 
-## Contributing
+Documentation Laravel [Laravel website](http://laravel.com/docs).
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
+## How to use
+Install with composer
+Set your ".env database" 
+and use the php artisan db:seed
 
 ## Security Vulnerabilities
 

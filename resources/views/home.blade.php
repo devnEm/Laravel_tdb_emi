@@ -72,10 +72,10 @@
                             <div class="panel-body">
                                 <table class="table">
                                     <thead>
-                                    <td>Mois</td>
-                                    <td>Support</td>
-                                    <td>Atteints</td>
-                                    <td>RAF</td>
+                                    <td><label>Mois</label></td>
+                                    <td><label>Support</label></td>
+                                    <td><label>Atteints</label></td>
+                                    <td><label>RAF</label></td>
                                     </thead>
                                     <tbody>
                                     @foreach($avenants as $avenant)
