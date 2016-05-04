@@ -1,6 +1,7 @@
 @charset "UTF-8";
 body {
-  background-image: url("../../../img/bg-pattern.png"); }
+  background-image: url("../../../img/bg-pattern.png");
+  font-family: 'Ubuntu', sans-serif; }
 
 input {
   width: 50%; }
@@ -45,7 +46,8 @@ nav {
 
 h4 {
   text-align: center;
-  font: bold 20px Ubuntu !important; }
+  font: bold 20px Ubuntu !important;
+  color: #F8FBFF !important; }
 
 /*!
  * Bootstrap v3.3.6 (http://getbootstrap.com)

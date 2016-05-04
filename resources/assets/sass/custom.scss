@@ -23,6 +23,7 @@ $progress-bar-color:$myWhite;
 
 body{
 	background-image: url("../../../img/bg-pattern.png");
+	font-family: 'Ubuntu', sans-serif;
 }
 
 input{
@@ -79,5 +80,6 @@ nav{
 h4{
 	text-align:center;
 	font: bold 20px Ubuntu !important;
+	color: $myWhite !important;
 }
 
