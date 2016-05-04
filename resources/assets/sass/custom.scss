@@ -16,12 +16,18 @@ $navbar-default-link-hover-bg:$myWhite;
 $navbar-default-brand-hover-color : $redInfopro;
 $navbar-default-brand-hover-bg:$myWhite;
 
+$progress-bg: $grey2;
+$progress-bar-color:$myWhite;
+
+
+
 body{
 	background-image: url("../../../img/bg-pattern.png");
 }
 
 input{
   width: 50%;
+
 }
 
 label{
@@ -51,6 +57,8 @@ label{
 }
 .progress{
 	margin-top: 20px;
+
+
 }
 
 .navbar-brand > img {
@@ -60,8 +68,11 @@ label{
 
 #progress-total{
 
-	height:35px;
+	height:25px;
+	font: bold 20px Ubuntu !important;
+	
 }
+
 nav{
 	font: 20px Ubuntu;
 }
@@ -69,3 +80,4 @@ h4{
 	text-align:center;
 	font: bold 20px Ubuntu !important;
 }
+

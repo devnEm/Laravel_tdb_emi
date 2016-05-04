@@ -12,25 +12,25 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="panel panel-default">
-                                <div class="panel-heading"><h4>Mon Suivi total</h4></div>
+                                <div class="panel-heading"><h4>Mon suivi total</h4></div>
 
                                 <div class="panel-body">
                                     <label>Gazette</label>
                                     <div class="progress">
                                         <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow={{round($percentTotalGazette,2)}} aria-valuemin="0" aria-valuemax="100" style="min-width: 2em;width: {{$percentTotalGazette}}%">
-                                            {{round($percentTotalGazette,2)}} %
+                                            {{round($percentTotalGazette,2)}}%
                                         </div>
                                     </div>
                                     <label>Verticaux</label>
                                     <div class="progress">
                                         <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="{{round($percentTotalVerticaux,2)}}" aria-valuemin="0" aria-valuemax="100" style="min-width: 2em;width: {{$percentTotalVerticaux}}%">
-                                            {{round($percentTotalVerticaux,2)}} %
+                                            {{round($percentTotalVerticaux,2)}}%
                                         </div>
                                     </div>
                                     <label>Evenement</label>
                                     <div class="progress">
                                         <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="min-width: 2em;width: {{$percentTotalEvenement}}%">
-{{round($percentTotalEvenement,2)}} %
+{{round($percentTotalEvenement,2)}}%
                                         </div>
                                     </div>
                                 </div>
