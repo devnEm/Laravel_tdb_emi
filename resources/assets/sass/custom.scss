@@ -16,9 +16,9 @@ $navbar-default-link-hover-bg:$myWhite;
 $navbar-default-brand-hover-color : $redInfopro;
 $navbar-default-brand-hover-bg:$myWhite;
 
-/*body{
-	background-image: url("../../../img/inforproMoniteur.jpg");
-}*/
+body{
+	background-image: url("../../../img/bg-pattern.png");
+}
 
 input{
   width: 50%;
@@ -27,16 +27,19 @@ input{
 label{
   width: 30%;
   color:$redInfopro;
+  font-family: 'Ubuntu', sans-serif;
 }
 .btn{
   background: $greyInfopro;
   color: $myWhite;
+  font-family: 'Ubuntu', sans-serif;
 }
 .table>tbody>tr>td{
 	vertical-align: middle !important;
 	text-align:center;
 	width:25%;
 	height:25px;
+	font-family: 'Ubuntu', sans-serif;
 }
 .table>thead>tr>td{
 	vertical-align: middle !important;
@@ -44,6 +47,7 @@ label{
 	width:25%;
 	height:25px;
 	font-size:1.2em;
+	font-family: 'Ubuntu', sans-serif;
 }
 .progress{
 	margin-top: 20px;
@@ -52,4 +56,16 @@ label{
 .navbar-brand > img {
 
 	margin-top:-15px;
+}
+
+#progress-total{
+
+	height:35px;
+}
+nav{
+	font: 20px Ubuntu;
+}
+h4{
+	text-align:center;
+	font: bold 20px Ubuntu !important;
 }

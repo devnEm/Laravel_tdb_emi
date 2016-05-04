@@ -5,14 +5,14 @@
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-default">
-                <div class="panel-heading">Dashboard</div>
+                <div class="panel-heading"><h4>Dashboard</h4></div>
 
                 <div class="panel-body">
 
                     <div class="row">
                         <div class="col-md-6">
                             <div class="panel panel-default">
-                                <div class="panel-heading">Mon Suivi total</div>
+                                <div class="panel-heading"><h4>Mon Suivi total</h4></div>
 
                                 <div class="panel-body">
                                     <label>Gazette</label>
@@ -38,11 +38,11 @@
                         </div>
                         <div class="col-md-6">
                             <div class="panel panel-default">
-                                <div class="panel-heading">Portrait</div>
+                                <div class="panel-heading"><h4>Portrait</h4></div>
 
                                 <div class="panel-body">
                                     <label>Total</label>
-                                    <div class="progress">
+                                    <div class="progress" id="progress-total">
                                         <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="2" aria-valuemax="100" style="min-width: 2em;width: {{($avenants->sum('realise'))/$avenants->sum('objectif')*100}}%">
                                             {{round(($avenants->sum('realise'))/$avenants->sum('objectif')*100, 2)}}%
                                         </div>
@@ -67,7 +67,7 @@
                     </div>
                     <div class="col-md-12">
                         <div class="panel panel-default">
-                            <div class="panel-heading">Mes Chiffres </div>
+                            <div class="panel-heading"><h4>Mes Chiffres</h4></div>
 
                             <div class="panel-body">
                                 <table class="table">

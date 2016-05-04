@@ -9,7 +9,7 @@
 
                 <div class="col-md-4">
                     <div class="panel panel-default">
-                        <div class="panel-heading">Ajouter une vente</div>
+                        <div class="panel-heading"><h4>Ajouter une vente</h4></div>
 
                         <div class="panel-body">
 
@@ -28,11 +28,11 @@
                             </div>
 
                             <div class="form-group" >
-                                {{ Form::label('montant','Montant') }}
+                                {{ Form::label('montant','Montant :') }}
                                 {{ Form::number('montant') }}
                             </div>
                             <div class="form-group" >
-                                {{ Form::label('client','Client') }}
+                                {{ Form::label('client','Client :') }}
                                 {{ Form::text('client') }}
                             </div>
 
@@ -45,16 +45,16 @@
                 </div>
                 <div class="col-md-8">
                     <div class="panel panel-default">
-                        <div class="panel-heading">Toutes mes ventes</div>
+                        <div class="panel-heading"><h4>Toutes mes ventes</h4></div>
 
                         <div class="panel-body">
                             
                             <table class="table">
                                 <thead>
-                                <td>Client</td>
-                                <td>Mois</td>
-                                <td>Support</td>
-                                <td>Montant</td>
+                                <td><label>Client</label></td>
+                                <td><label>Mois</label></td>
+                                <td><label>Support</label></td>
+                                <td><label>Montant</label></td>
                                 {{--<td>Action</td>--}}
                                 </thead>
                                 <tbody>

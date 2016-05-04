@@ -5,15 +5,15 @@
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Mon avenant</div>
+                    <div class="panel-heading"><h4>Mon avenant</h4></div>
                     <div class="panel-body">
                         <table class="table">
                             <thead>
-                                <td>Mois</td>
-                                <td>Support</td>
-                                <td>Montant</td>
-                                <td>Réalisé</td>
-                                <td>Action</td>
+                                <td><label>Mois</label></td>
+                                <td><label>Support</label></td>
+                                <td><label>Montant</td>
+                                <td><label>Réalisé</label></td>
+                                <td><label>Action</label></td>
                             </thead>
                         <tbody>
                         @foreach($avenants as $avenant)
@@ -39,7 +39,7 @@
                         
 
                         <div class="panel panel-default">
-                            <div class="panel-heading">Ajouter un avenant</div>
+                            <div class="panel-heading"><h4>Ajouter un avenant</h4></div>
                             <div class="panel-body">
 
                                 <div class="form-group">

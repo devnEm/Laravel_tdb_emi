@@ -17,12 +17,12 @@
                         </div>
                     </div>
                     <article>
-                        <h4>On avance</h4>
+                        <h4><label>On avance</label></h4>
                         <p>Il reste encore à intégrer les fonctions de suppression et certainement quelques fonctionnalités oubliées.</p>
                         <p>Mais surtout il n'y a pas le retour <strong>en fonction des Trimestres</strong>. J'envisage un filtrage des données et ....</p>
                     </article>
                     <article>
-                        <h4>On continue</h4>
+                        <h4><label>On continue</label></h4>
                         <p>Les fonction de suppression ont été ajouté.</p><p> Une amélioration de la présentation a été effectué.</p>
                         <p>Et surtout un filtrage sur le mois courant sur la page d'accueil ainsi qu'un retour des objectifs totaux des supports</p>
                     </article>
