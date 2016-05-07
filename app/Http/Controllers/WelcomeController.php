@@ -6,11 +6,14 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
+use App\Post;
+
 class WelcomeController extends Controller
 {
     public function welcome()
     {
+        $posts = Post::all();
 
-        return view('welcome');
+        return view('welcome', ['posts'=>$posts]);
     }
 }

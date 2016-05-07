@@ -31,6 +31,7 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('redaction/index', 'AdminController@redaction');
 
     Route::get('redaction/create', 'AdminController@createPost');
+    Route::post('redaction/create', 'AdminController@storePost');
     Route::get('redaction/admin', 'AdminController@getAllPosts');
 
 

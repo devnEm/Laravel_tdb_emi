@@ -36,6 +36,14 @@
                         <p>La mise en place d'un CSS adapté à l'entreprise <a href="http://www.infopro-digital.com/" target="blank">InfoproDigital</a> vient d'être ajouté.</p>
 
                     </article>
+                    <hr>
+                    @foreach ($posts as $post)
+                        <article>
+                            <h4><label>{{$post->titre}}</label></h4>
+                            <p>{{$post->article}}</p>
+                        </article>
+                        <hr>
+                    @endforeach
 
                     </div>
                 </div>

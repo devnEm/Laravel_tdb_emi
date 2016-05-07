@@ -9,11 +9,17 @@
                     <div class="panel-body">
 
                         <div class="row">
-                            <div class="col-md-6">
+                            <div class="col-md-4">
                                 <div class="panel panel-default">
                                     <div class="panel-heading"><h4>Mon suivi total</h4></div>
 
                                     <div class="panel-body">
+                                        <label><h3>Total</h3></label>
+                                        <div class="progress" id="progress-total">
+                                            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="2" aria-valuemax="100" style="min-width: 2em;width: {{($avenants->sum('realise'))/$avenants->sum('objectif')*100}}%">
+                                                {{round(($avenants->sum('realise'))/$avenants->sum('objectif')*100, 2)}}%
+                                            </div>
+                                        </div>
                                         <label>Gazette</label>
                                         <div class="progress">
                                             <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow={{round($percentTotalGazette,2)}} aria-valuemin="0" aria-valuemax="100" style="min-width: 2em;width: {{$percentTotalGazette}}%">
@@ -37,17 +43,12 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-4">
                                 <div class="panel panel-default">
                                     <div class="panel-heading"><h4>Commercial</h4></div>
 
                                     <div class="panel-body">
-                                        <label>Total</label>
-                                        <div class="progress" id="progress-total">
-                                            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="2" aria-valuemax="100" style="min-width: 2em;width: {{($avenants->sum('realise'))/$avenants->sum('objectif')*100}}%">
-                                                {{round(($avenants->sum('realise'))/$avenants->sum('objectif')*100, 2)}}%
-                                            </div>
-                                        </div>
+
                                         <hr>
                                         <br>
                                         <table class="table">
@@ -61,8 +62,38 @@
                                                 <td>Chiffre total réalisé : </td>
                                                 <td>{{number_format($avenants->sum('realise'), 2, ',', ' ')}} €</td>                                </tr>
                                         </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading"><h4>Trimestre</h4></div>
 
-
+                                    <div class="panel-body">
+                                        <label>T1</label>
+                                        <div class="progress" id="progress-total">
+                                            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="2" aria-valuemax="100" style="min-width: 2em;width: {{$t1}}%">
+                                                {{round($t1)}}%
+                                            </div>
+                                        </div>
+                                        <label>T2</label>
+                                        <div class="progress" id="progress-total">
+                                            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="2" aria-valuemax="100" style="min-width: 2em;width: {{$t2}}%">
+                                                {{round($t2)}}%
+                                            </div>
+                                        </div>
+                                        <label>T3</label>
+                                        <div class="progress" id="progress-total">
+                                            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="2" aria-valuemax="100" style="min-width: 2em;width: {{$t3}}%">
+                                                {{round($t3)}}%
+                                            </div>
+                                        </div>
+                                        <label>T4</label>
+                                        <div class="progress" id="progress-total">
+                                            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="2" aria-valuemax="100" style="min-width: 2em;width: {{$t4}}%">
+                                                {{round($t4)}}%
+                                            </div>
+                                        </div>
 
                                     </div>
                                 </div>
