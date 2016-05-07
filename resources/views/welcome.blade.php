@@ -9,6 +9,16 @@
                 <div class="panel-heading"><h4>Bienvenue</h4></div>
 
                 <div class="panel-body">
+
+                    @foreach ($posts as $post)
+                        <article>
+                            <h4><label>{{$post->titre}}</label></h4>
+                            <p>{{$post->article}}</p>
+                        </article>
+                        <hr>
+                    @endforeach
+
+                    @if (Auth::check())
                     <h2>Application de gestion des objectifs commerciaux.</h2>
                     <br>
                     <hr>
@@ -37,13 +47,8 @@
 
                     </article>
                     <hr>
-                    @foreach ($posts as $post)
-                        <article>
-                            <h4><label>{{$post->titre}}</label></h4>
-                            <p>{{$post->article}}</p>
-                        </article>
-                        <hr>
-                    @endforeach
+                        @endif
+
 
                     </div>
                 </div>
