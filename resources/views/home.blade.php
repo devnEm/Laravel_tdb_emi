@@ -1,6 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
+    @if(Auth::user()->isAdmin)
+        <label>parce que je ne suis pas commercial</label>
+        @else
 <div class="container">
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
@@ -40,7 +43,7 @@
                         </div>
                         <div class="col-md-6">
                             <div class="panel panel-default">
-                                <div class="panel-heading"><h4>Portrait</h4></div>
+                                <div class="panel-heading"><h4>Commercial</h4></div>
 
                                 <div class="panel-body">
                                     <label>Total</label>
@@ -71,7 +74,7 @@
                     </div>
                     <div class="col-md-12">
                         <div class="panel panel-default">
-                            <div class="panel-heading"><h4>Mes Chiffres</h4></div>
+                            <div class="panel-heading"><h4>Chiffres d'Affaire</h4></div>
 
                             <div class="panel-body">
                                 <table class="table">
@@ -106,4 +109,5 @@
         </div>
     </div>
 </div>
+    @endif
 @endsection

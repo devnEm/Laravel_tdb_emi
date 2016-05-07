@@ -5,14 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Emilie_DashBoard</title>
+    <title>Admin</title>
 
     <!-- Fonts -->
     <link href='https://fonts.googleapis.com/css?family=Ubuntu:400,300,500,700,300italic,400italic,500italic,700italic' rel='stylesheet' type='text/css'>
 
 
     <!-- Styles -->
-    <link href="css/app.css" rel="stylesheet">
+    {{ Html::style('css/app.css') }}
 
     <style>
 
@@ -39,16 +39,12 @@
 
             @if (Auth::check())
 
-            @if (Auth::user()->isAdmin)
-
-            @else
                     <!-- Left Side Of Navbar -->
             <ul class="nav navbar-nav">
-                <li><a href="{{ url('/home') }}">Mon Suivi</a></li>
-                <li><a href="{{ url('/vente') }}">Mes Ventes</a></li>
-                <li><a href="{{ url('/avenant') }}">Mon Avenant</a></li>
+                <li><a href="{{ url('/admin/index') }}">Admin</a></li>
+                <li><a href="{{ url('/redaction/index') }}">Redaction</a></li>
             </ul>
-            @endif
+
             @endif
                     <!-- Right Side Of Navbar -->
             <ul class="nav navbar-nav navbar-right">
