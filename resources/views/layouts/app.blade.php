@@ -41,6 +41,13 @@
                 @if (Auth::check())
 
                         @if (Auth::user()->isAdmin)
+                        <ul class="nav navbar-nav">
+                        <li><a href="{{ url('/admin/index') }}">Admin</a></li>
+
+                        <li><a href="{{ url('/vente') }}">Mes Ventes</a></li>
+                        <li><a href="{{ url('/avenant') }}">Mon Avenant</a></li>
+                        <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
+                            </ul>
 
                         @else
                 <!-- Left Side Of Navbar -->
@@ -48,6 +55,7 @@
                     <li><a href="{{ url('/home') }}">Mon Suivi</a></li>
                     <li><a href="{{ url('/vente') }}">Mes Ventes</a></li>
                     <li><a href="{{ url('/avenant') }}">Mon Avenant</a></li>
+                    {{--<li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>--}}
                 </ul>
                         @endif
                 @endif

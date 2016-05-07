@@ -1,0 +1,22 @@
+@import "customColors";
+
+$body-bg:$fifthBlue ;
+$text-color: $primaryBlue;
+
+$panel-default-text : $myWhite;
+$panel-bg : $myWhite;
+$panel-default-heading-bg: $primaryBlue;
+$panel-inner-border: $primaryBlue;
+$panel-default-border: $primaryBlue;
+
+$navbar-default-bg: $primaryBlue;
+$navbar-default-link-color : $myWhite;
+$navbar-default-link-hover-color : $primaryBlue;
+$navbar-default-link-hover-bg:$myWhite;
+$navbar-default-brand-hover-color : $primaryBlue;
+$navbar-default-brand-hover-bg:$myWhite;
+
+$progress-bg: $grey2;
+$progress-bar-color:$myWhite;
+
+@import "../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap";

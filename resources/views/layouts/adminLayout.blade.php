@@ -5,14 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Admin</title>
+    <title>devnem.com</title>
 
     <!-- Fonts -->
     <link href='https://fonts.googleapis.com/css?family=Ubuntu:400,300,500,700,300italic,400italic,500italic,700italic' rel='stylesheet' type='text/css'>
 
 
     <!-- Styles -->
-    {{ Html::style('css/app.css') }}
+    {{ Html::style('css/admin.css') }}
 
     <style>
 
@@ -32,7 +32,7 @@
             </button>
 
             <!-- Branding Image -->
-            <a class="navbar-brand" href="{{ url('/') }}"><img src="img/inforproMoniteur.jpg"/></a>
+            <a class="navbar-brand" href="{{ url('/') }}">Devnem.com</a>
         </div>
 
         <div class="collapse navbar-collapse" id="app-navbar-collapse">
@@ -40,11 +40,22 @@
             @if (Auth::check())
 
                     <!-- Left Side Of Navbar -->
-            <ul class="nav navbar-nav">
-                <li><a href="{{ url('/admin/index') }}">Admin</a></li>
-                <li><a href="{{ url('/redaction/index') }}">Redaction</a></li>
-            </ul>
 
+                @if (Auth::user()->isAdmin)
+                    <ul class="nav navbar-nav">
+                        <li><a href="{{ url('/admin/index') }}">Admin</a></li>
+                        <li><a href="{{ url('/redaction/index') }}">Redaction</a></li>
+                        {{--<li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>--}}
+                    </ul>
+                    @else
+                    <ul class="nav navbar-nav">
+                        <li><a href="{{ url('/home') }}">Mon Suivi</a></li>
+                        <li><a href="{{ url('/vente') }}">Mes Ventes</a></li>
+                        <li><a href="{{ url('/avenant') }}">Mon Avenant</a></li>
+                        {{--<li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>--}}
+                    </ul>
+
+                @endif
             @endif
                     <!-- Right Side Of Navbar -->
             <ul class="nav navbar-nav navbar-right">
@@ -60,7 +71,7 @@
 
                         <ul class="dropdown-menu" role="menu">
                             @if (Auth::user()->isAdmin)
-                                <li><a href="{{ url('/redaction') }}"><i class="fa fa-btn"></i>La Rédaction</a></li>
+                                <li><a href="{{ url('/admin/index') }}"><i class="fa fa-btn"></i>Admin</a></li>
                                 <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
                             @else
                                 <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
