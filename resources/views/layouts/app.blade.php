@@ -12,7 +12,8 @@
     
 
     <!-- Styles -->
-    <link href="css/app.css" rel="stylesheet">
+    {{ Html::style('css/app.css') }}
+
 
     <style>
 
@@ -38,12 +39,17 @@
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
 
                 @if (Auth::check())
+
+                        @if (Auth::user()->isAdmin)
+
+                        @else
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
                     <li><a href="{{ url('/home') }}">Mon Suivi</a></li>
                     <li><a href="{{ url('/vente') }}">Mes Ventes</a></li>
                     <li><a href="{{ url('/avenant') }}">Mon Avenant</a></li>
                 </ul>
+                        @endif
                 @endif
                 <!-- Right Side Of Navbar -->
                 <ul class="nav navbar-nav navbar-right">
@@ -58,8 +64,12 @@
                             </a>
 
                             <ul class="dropdown-menu" role="menu">
-                                
-                                <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
+                                @if (Auth::user()->isAdmin)
+                                    <li><a href="{{ url('/redaction/index') }}"><i class="fa fa-btn"></i>La Rédaction</a></li>
+                                    <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
+                                @else
+                                    <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
+                                @endif
 
                             </ul>
                         </li>

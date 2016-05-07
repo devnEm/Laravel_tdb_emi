@@ -27,5 +27,11 @@ Route::group(['middleware' => ['web']], function () {
     Route::post('/avenant', 'AvenantController@store');
     Route::get('/avenant/delete/{id}','AvenantController@delete');
 
+    Route::get('admin/index', 'AdminController@index');
+    Route::get('redaction/index', 'AdminController@redaction');
+
+    Route::get('redaction/create', 'AdminController@createPost');
+    Route::get('redaction/admin', 'AdminController@getAllPosts');
+
 
 });
