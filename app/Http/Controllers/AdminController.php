@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 
 use App\Post;
+use App\Categorie;
+
 use Auth;
 use Validator;
 
@@ -27,8 +29,9 @@ class AdminController extends Controller
     public function createPost()
     {
         $posts = Post::all();
+        $categories_label = Categorie::all()->pluck('label');
 
-        return view('createPost',['posts'=>$posts]);
+        return view('createPost',['posts'=>$posts,'categories_label'=>$categories_label]);
     }
 
     public function storePost(Request $request)
@@ -42,10 +45,32 @@ class AdminController extends Controller
 
         $validator= Validator::make($request->all(),$rules);
 
+        // echo('<pre>');
+        // var_dump($request->input('isPublic'));
+        // echo('</pre>'); die;
+
         $article = new Post();
         $article->titre=$request->input('titre');
         $article->article=$request->input('article');
+
+        if($request->input('isPublic') == null){
+
+            $article->isPublic=0;
+
+        }else{
+            
+            $article->isPublic=$request->input('isPublic');
+        }
+
+
+        
         $article->user_id= $user_id;
+        
+
+        $categorie_id=Categorie::select()
+            ->where('id', ($request->input('categorie'))+1)->value('id');
+
+        $article->categorie_id=$categorie_id;
 
         $article->save();
 

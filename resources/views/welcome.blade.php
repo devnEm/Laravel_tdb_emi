@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-6">
 
             <div class="panel panel-default">
                 <div class="panel-heading"><h4>Bienvenue</h4></div>
@@ -11,14 +11,51 @@
                 <div class="panel-body">
 
                     @foreach ($posts as $post)
-                        <article>
-                            <h4><label>{{$post->titre}}</label></h4>
-                            <p>{{$post->article}}</p>
-                        </article>
-                        <hr>
+
+                    @if($post->categorie->label == 'blog')
+                        
+                        @if(Auth::check())
+                            
+
+                            <article>
+                            
+                                @if($post->isPublic)
+                                    <span>public</span>
+                                @else
+                                    <span>privé</span>
+                                @endif
+
+                                <h4><label>{{$post->titre}}</label></h4>
+                                <p>{{ $post->categorie->label }}</p>
+                                <p>{{$post->article}}</p>
+
+
+                            </article>
+                            <hr>
+
+                            @elseif($post->isPublic)
+                            <article>
+                                <h4><label>{{$post->titre}}</label></h4>
+                                <p>{{ $post->categorie->label }}</p>
+                                <p>{{$post->article}}</p>
+                            </article>
+                            <hr>
+                        
+                            @endif
+                        @endif
                     @endforeach
+                </div>
+            </div>
+        </div>
+        
 
                     @if (Auth::check())
+                    <div class="col-md-6">
+
+            <div class="panel panel-default">
+                <div class="panel-heading"><h4>Commercial</h4></div>
+
+                <div class="panel-body">
                     <h2>Application de gestion des objectifs commerciaux.</h2>
                     <br>
                     <hr>
@@ -29,7 +66,24 @@
                         </div>
                     </div>
                     <hr>
-                    <article>
+                        @foreach ($posts as $post)
+                            
+                        
+                            @if($post->categorie->label == 'commercial')
+                            <article>
+                            <h4><label>{{$post->titre}}</label></h4>
+                            <p>{{ $post->categorie->label }}</p>
+                            <p>{{$post->article}}</p>
+                            <hr>
+                            
+                            </article>
+                            @endif
+                        
+                        @endforeach
+                        
+
+
+                    <!-- <article>
                         <h4><label>On avance ...</label></h4>
                         <p>Il reste encore à intégrer les fonctions de suppression et certainement quelques fonctionnalités oubliées.</p>
                         <p>Mais surtout il n'y a pas le retour <strong>en fonction des Trimestres</strong>. J'envisage un filtrage des données et ....</p>
@@ -37,7 +91,7 @@
                     <hr>
                     <article>
                         <h4><label>On continue ...</label></h4>
-                        <p>Les fonction de suppression ont été ajouté.</p><p> Une amélioration de la présentation a été effectué.</p>
+                        <p>Les fonctions de suppression ont été ajouté.</p><p> Une amélioration de la présentation a été effectué.</p>
                         <p>Et surtout un filtrage sur le mois courant sur la page d'accueil ainsi qu'un retour des objectifs totaux des supports</p>
                     </article>
                     <hr>
@@ -46,7 +100,7 @@
                         <p>La mise en place d'un CSS adapté à l'entreprise <a href="http://www.infopro-digital.com/" target="blank">InfoproDigital</a> vient d'être ajouté.</p>
 
                     </article>
-                    <hr>
+                    <hr> -->
                         @endif
 
 

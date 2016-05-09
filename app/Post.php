@@ -12,6 +12,11 @@ class Post extends Model
      * @var array
      */
     protected $fillable = [
-        'titre', 'article'
+        'titre', 'article','isPublic'
     ];
+
+    public function categorie(){
+
+    	return $this->hasOne('App\Categorie','id','categorie_id');
+    }
 }

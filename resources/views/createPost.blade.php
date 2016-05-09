@@ -22,6 +22,18 @@
                                 {{ Form::text('titre') }}
                             </div>
 
+                            <div class="form-group">
+
+                                {{Form::label('isPublic','Rendre public : ')}}
+                                {{ Form::checkbox('isPublic') }}
+                            </div>
+
+                            <div class="form-group">
+
+                                {{Form::label('categorie','Catégorie : ')}}
+                                {{ Form::select('categorie', $categories_label, null,['label'=>'label']) }}
+                            </div>
+
                             <div class="form-group" >
                                 {{ Form::label('article','Article :') }}
                                 {{ Form::textarea('article') }}

@@ -6,6 +6,7 @@ use App\Produit;
 use App\Avenant;
 use App\Mois;
 use App\Support;
+use App\Categorie;
 
 
 class DatabaseSeeder extends Seeder
@@ -78,6 +79,9 @@ class DatabaseSeeder extends Seeder
         Mois::create([
             'label'=>'Decembre'
             ]);
+
+        Categorie::create(['label'=>'commercial']);
+        Categorie::create(['label'=>'blog']);
 
         for($i=1 ; $i<=12 ; $i++)
         {

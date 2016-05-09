@@ -16,8 +16,11 @@ class CreatePostsTable extends Migration
             $table->increments('id');
             $table->string('titre');
             $table->longText('article');
+            $table->boolean('isPublic');
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users');
+            $table->integer('categorie_id')->unsigned();
+            $table->foreign('categorie_id')->references('id')->on('categories');
             $table->timestamps();
         });
     }
