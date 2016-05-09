@@ -58,7 +58,7 @@
                                 {{--<td>Action</td>--}}
                                 </thead>
                                 <tbody>
-                                @foreach($ventes as $vente)
+                                @foreach($ventes as $vente) 
                                 <tr>
 
                                     <td>{{ $vente->client }}</td>

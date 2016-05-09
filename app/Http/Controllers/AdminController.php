@@ -29,6 +29,14 @@ class AdminController extends Controller
         return view('redaction',['posts'=>$posts,'categories'=>$categories]);
     }
 
+    public function showPost($id)
+    {
+        $post = Post::where('id', $id)->first();
+        
+
+        return view('post',['post'=>$post]);
+    }
+
     public function createPost()
     {
         $posts = Post::all();

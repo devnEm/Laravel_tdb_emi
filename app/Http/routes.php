@@ -27,15 +27,16 @@ Route::group(['middleware' => ['web']], function () {
     Route::post('/avenant', 'AvenantController@store');
     Route::get('/avenant/delete/{id}','AvenantController@delete');
 
-    Route::get('admin/index', 'AdminController@index');
+    Route::get('/admin/index', 'AdminController@index');
 
-    Route::get('redaction/index', 'AdminController@redaction');
-    Route::get('redaction/create', 'AdminController@createPost');
-    Route::post('redaction/create', 'AdminController@storePost');
-    Route::get('redaction/admin', 'AdminController@getAllPosts');
+    Route::get('/redaction/index', 'AdminController@redaction');
+    Route::get('/redaction/article/{id}', 'AdminController@showPost');
+    Route::get('/redaction/create', 'AdminController@createPost');
+    Route::post('/edaction/create', 'AdminController@storePost');
+    Route::get('/redaction/admin', 'AdminController@getAllPosts');
 
-    Route::get('redaction/category', 'AdminController@createCategory');
-    Route::post('redaction/category', 'AdminController@storeCategory');
+    Route::get('/redaction/category', 'AdminController@createCategory');
+    Route::post('/redaction/category', 'AdminController@storeCategory');
 
 
 });
