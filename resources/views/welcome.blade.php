@@ -12,22 +12,17 @@
 
                     @foreach ($posts as $post)
 
-                    @if($post->categorie->label == 'blog')
+                    @if($post->categorie->label !== 'commercial')
                         
                         @if(Auth::check())
                             
 
                             <article>
                             
-                                @if($post->isPublic)
-                                    <span>public</span>
-                                @else
-                                    <span>privé</span>
-                                @endif
-
+                                
                                 <h4><label>{{$post->titre}}</label></h4>
-                                <p>{{ $post->categorie->label }}</p>
-                                <p>{{$post->article}}</p>
+                                <p>Catégorie : {{ $post->categorie->label }}</p>
+                                <p>{{$post->intro}}</p>
 
 
                             </article>
@@ -36,8 +31,8 @@
                             @elseif($post->isPublic)
                             <article>
                                 <h4><label>{{$post->titre}}</label></h4>
-                                <p>{{ $post->categorie->label }}</p>
-                                <p>{{$post->article}}</p>
+                                <p>Catégorie : {{ $post->categorie->label }}</p>
+                                <p>{{$post->intro}}</p>
                             </article>
                             <hr>
                         
@@ -72,8 +67,8 @@
                             @if($post->categorie->label == 'commercial')
                             <article>
                             <h4><label>{{$post->titre}}</label></h4>
-                            <p>{{ $post->categorie->label }}</p>
-                            <p>{{$post->article}}</p>
+                            <p>Catégorie : {{ $post->categorie->label }}</p>
+                            <p>{{$post->intro}}</p>
                             <hr>
                             
                             </article>

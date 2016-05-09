@@ -34,6 +34,12 @@
                                 {{ Form::select('categorie', $categories_label, null,['label'=>'label']) }}
                             </div>
 
+                            <div class="form-group">
+
+                                {{Form::label('intro','Intro : ')}}
+                                {{ Form::text('intro') }}
+                            </div>
+
                             <div class="form-group" >
                                 {{ Form::label('article','Article :') }}
                                 {{ Form::textarea('article') }}

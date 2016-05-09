@@ -23,7 +23,10 @@ class AdminController extends Controller
     public function redaction()
     {
 
-        return view('redaction');
+        $posts = Post::all();
+        $categories = Categorie::all();
+
+        return view('redaction',['posts'=>$posts,'categories'=>$categories]);
     }
 
     public function createPost()
@@ -52,13 +55,14 @@ class AdminController extends Controller
         $article = new Post();
         $article->titre=$request->input('titre');
         $article->article=$request->input('article');
+        $article->intro=$request->input('intro');
 
         if($request->input('isPublic') == null){
 
             $article->isPublic=0;
 
         }else{
-            
+
             $article->isPublic=$request->input('isPublic');
         }
 
@@ -84,4 +88,37 @@ class AdminController extends Controller
 
         return view('postAdmin');
     }
+
+
+    public function createCategory()
+    {
+        
+        $categories = Categorie::all();
+
+        return view('createCategory',['categories'=>$categories]);
+    }
+
+    public function storeCategory(Request $request)
+    {
+        $user_id= Auth::user()->id;
+
+        $rules=[
+            'label' => 'required',
+        ];
+
+        $validator= Validator::make($request->all(),$rules);
+
+        // echo('<pre>');
+        // var_dump($request->input('isPublic'));
+        // echo('</pre>'); die;
+
+        $category = new Categorie();
+        $category->label=$request->input('label');
+        
+        $category->save();
+
+        return redirect()->action('AdminController@createCategory');
+    }
+
+
 }
