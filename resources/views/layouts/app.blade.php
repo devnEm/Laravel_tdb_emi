@@ -33,7 +33,7 @@
                 </button>
 
                 <!-- Branding Image -->
-                <a class="navbar-brand" href="{{ url('/') }}"><img src="img/inforproMoniteur.jpg"/></a>
+                <a class="navbar-brand" href="{{ url('/') }}"><img src="img/InfoproDigital.jpg"/></a>
             </div>
 
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
