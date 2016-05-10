@@ -13,10 +13,11 @@
 
 Route::get('/', 'WelcomeController@welcome');
 Route::get('redaction/article/{id}', 'AdminController@showPost');
+Route::auth();
 
 Route::group(['middleware' => ['auth']], function () {
 
-    Route::auth();
+
 
     Route::get('home', 'HomeController@index');
 
