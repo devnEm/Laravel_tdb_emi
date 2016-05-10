@@ -12,8 +12,9 @@
 */
 
 Route::get('/', 'WelcomeController@welcome');
+Route::get('redaction/article/{id}', 'AdminController@showPost');
 
-Route::group(['middleware' => ['web']], function () {
+Route::group(['middleware' => ['auth']], function () {
 
     Route::auth();
 
@@ -30,7 +31,7 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('admin/index', 'AdminController@index');
 
     Route::get('redaction/index', 'AdminController@redaction');
-    Route::get('redaction/article/{id}', 'AdminController@showPost');
+
     Route::get('redaction/article/delete/{id}', 'AdminController@deletePost');
     Route::get('redaction/article/edit/{id}', 'AdminController@editPost');
     Route::post('redaction/article/edit/{id}', 'AdminController@updatePost');
