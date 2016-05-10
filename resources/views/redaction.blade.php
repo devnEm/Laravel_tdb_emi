@@ -11,26 +11,24 @@
 
                     <div class="panel-body">
                         <a href="{{url('redaction/create')}}" class="btn btn-info" ><label>Ajouter un article</label></a>
-                        
 
-                        <table class="table">
+
+
+                            <table class="table">
                                 <thead>
-                                    <td>id</td>
-                                    <td>catégorie</td>
-                                    <td>titre</td>
-                                    <td>Visibilité</td>
+                                <td>id</td>
+                                <td>titre</td>
+                                <td>action</td>
+                                <td>action</td>
                                 </thead>
                                 <tbody>
                                 @foreach($posts as $post)
                                     <tr>
-                                    <td>{{$post->id}}</td>
-                                    <td>{{$post->categorie->label}}</td>
-                                    <td>{{$post->titre}}</td>
-                                    @if($post->isPublic)
-                                    <td>public</td>
-                                    @else
-                                    <td>privé</td>
-                                    @endif
+                                        <td>{{$post->id}}</td>
+                                        <td>{{$post->titre}}</td>
+                                        <td><a href="{{ url('redaction/article/delete', $post->id ) }}"><button>supprimer</button></a></td>
+
+                                    <td><a href="{{ url('redaction/article/edit', $post->id ) }}"><button>editer</button></a></td>
                                     </tr>
                                 @endforeach
                                 </tbody>

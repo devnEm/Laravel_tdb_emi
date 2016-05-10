@@ -50,27 +50,7 @@
 
                             {{ Form::close() }}
                         </div>
-                        <div class="col-md-3">
-                            <table class="table">
-                                <thead>
-                                    <td>id</td>
-                                    <td>titre</td>
-                                    <td>action</td>
-                                    <td>action</td>
-                                </thead>
-                                <tbody>
-                                @foreach($posts as $post)
-                                    <tr>
-                                    <td>{{$post->id}}</td>
-                                    <td>{{$post->titre}}</td>
-                                    <td><a href="{{ url('redaction/article/delete', $post->id ) }}"><button>supprimer</button></a></td>
-                                    </tr>
-                                    <td><a href="{{ url('redaction/article/edit', $post->id ) }}"><button>editer</button></a></td>
-                                    </tr>
-                                @endforeach
-                                </tbody>
-                            </table>
-                        </div>
+
 
                     </div>
                 </div>

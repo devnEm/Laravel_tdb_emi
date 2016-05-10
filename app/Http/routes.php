@@ -33,6 +33,7 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('redaction/article/{id}', 'AdminController@showPost');
     Route::get('redaction/article/delete/{id}', 'AdminController@deletePost');
     Route::get('redaction/article/edit/{id}', 'AdminController@editPost');
+    Route::post('redaction/article/edit/{id}', 'AdminController@updatePost');
     Route::get('redaction/create', 'AdminController@createPost');
     Route::post('redaction/create', 'AdminController@storePost');
     Route::get('redaction/admin', 'AdminController@getAllPosts');

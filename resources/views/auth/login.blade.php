@@ -39,9 +39,11 @@
                         </div>
 
                         <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
+                            <label class="col-md-4 control-label">Se souvenir de moi</label>
+                            <div class="col-md-6">
+
                                 <div class="checkbox">
-                                    <label>Se souvenir de moi</label>
+
                                         <input type="checkbox" name="remember"> 
                                     
                                 </div>

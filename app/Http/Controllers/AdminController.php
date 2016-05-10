@@ -50,15 +50,49 @@ class AdminController extends Controller
         $post = Post::where('id',$id)->delete();
         
 
-        return redirect()->action('AdminController@createPost');
+        return redirect()->action('AdminController@redaction');
     }
 
     public function editPost($id)
     {
         $post = Post::where('id',$id)->first();
-        
+        $categories_label = Categorie::all()->pluck('label');
 
-        return view('editPost',['post'=>$post]);
+        return view('editPost',['post'=>$post,'categories_label'=>$categories_label]);
+    }
+
+    public function updatePost($id, Request $request)
+    {
+        $article = Post::where('id',$id)->first();
+
+        $rules=[
+            'titre' => 'required',
+            'article' => 'required'
+        ];
+
+        $validator= Validator::make($request->all(),$rules);
+
+        $article->titre=$request->input('titre');
+        $article->article=$request->input('article');
+        $article->intro=$request->input('intro');
+
+        if($request->input('isPublic') == null){
+
+            $article->isPublic=0;
+
+        }else{
+
+            $article->isPublic=$request->input('isPublic');
+        }
+
+        $categorie_id=Categorie::select()
+            ->where('id', ($request->input('categorie'))+1)->value('id');
+
+        $article->categorie_id=$categorie_id;
+
+        $article->update();
+
+        return redirect()->action('AdminController@redaction');
     }
 
     public function storePost(Request $request)
@@ -102,9 +136,7 @@ class AdminController extends Controller
 
         $article->save();
 
-        $posts = Post::all();
-
-        return redirect()->action('AdminController@createPost');
+        return redirect()->action('AdminController@redaction');
     }
 
     public function getAllPosts()
@@ -141,7 +173,7 @@ class AdminController extends Controller
         
         $category->save();
 
-        return redirect()->action('AdminController@createCategory');
+        return redirect()->action('AdminController@redaction');
     }
 
 
