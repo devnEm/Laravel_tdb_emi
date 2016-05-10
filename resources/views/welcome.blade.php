@@ -30,7 +30,7 @@
 
                             @elseif($post->isPublic)
                             <article>
-                                <h4><label>{{$post->titre}}</label></h4>
+                                <h4><label><a href="{{ url('redaction/article', $post->id ) }}" >{{$post->titre}}</a></label></h4>
                                 <p>Catégorie : {{ $post->categorie->label }}</p>
                                 <p>{{$post->intro}}</p>
                             </article>

@@ -45,6 +45,22 @@ class AdminController extends Controller
         return view('createPost',['posts'=>$posts,'categories_label'=>$categories_label]);
     }
 
+    public function deletePost($id)
+    {
+        $post = Post::where('id',$id)->delete();
+        
+
+        return redirect()->action('AdminController@createPost');
+    }
+
+    public function editPost($id)
+    {
+        $post = Post::where('id',$id)->first();
+        
+
+        return view('editPost',['post'=>$post]);
+    }
+
     public function storePost(Request $request)
     {
         $user_id= Auth::user()->id;
