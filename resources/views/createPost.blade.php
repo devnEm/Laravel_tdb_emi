@@ -14,7 +14,7 @@
 
                     <div class="panel-body">
                         <div class="col-md-9">
-                            {{ Form::open(array('url'=>'redaction/create')) }}
+                            {{ Form::open(array('url'=>'/redaction/create')) }}
 
                             <div class="form-group">
 

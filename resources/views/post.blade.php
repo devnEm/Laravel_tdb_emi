@@ -8,7 +8,7 @@
                         <div class="panel-heading"><h4>{{$post->titre}}</h4></div>
 
                         <div class="panel-body">
-                        <p>{{$post->article}}</p>
+                        <p>{!! $post->article !!}</p>
                         </div>
                     </div>
                 </div>
