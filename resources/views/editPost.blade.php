@@ -16,7 +16,7 @@
 <div class="form-group">
 
     {{Form::label('isPublic','Rendre public : ')}}
-    {{ Form::checkbox('isPublic',$post->isPublic) }}
+    {{ Form::checkbox('isPublic',1,$post->isPublic) }}
 </div>
 
 <div class="form-group">
