@@ -10,9 +10,11 @@
     <!-- Fonts -->
     <link href='https://fonts.googleapis.com/css?family=Ubuntu:400,300,500,700,300italic,400italic,500italic,700italic' rel='stylesheet' type='text/css'>
 
-
+    @include('tinymce::tpl')
     <!-- Styles -->
     {{ Html::style('css/admin.css') }}
+
+
 
     <style>
 

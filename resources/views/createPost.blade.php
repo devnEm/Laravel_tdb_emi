@@ -1,5 +1,5 @@
 @extends('layouts.adminLayout')
-@include('tinymce::tpl')
+
 
 @section('content')
     <div class="container">
