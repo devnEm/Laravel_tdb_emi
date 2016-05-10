@@ -27,7 +27,7 @@
 
 <div class="form-group">
 
-    {{Form::label('intro','Intro : ')}}
+    {{Form::label('intro','Sous-titre : ')}}
     {{ Form::text('intro',$post->intro) }}
 </div>
 
