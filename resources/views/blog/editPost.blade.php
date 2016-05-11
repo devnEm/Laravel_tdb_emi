@@ -22,7 +22,7 @@
 <div class="form-group">
 
     {{Form::label('categorie','Catégorie : ')}}
-    {{ Form::select('categorie', $categories_label, null,['label'=>'label']) }}
+    {{ Form::select('categorie', $categories_label, $post->categorie,['label'=>'label']) }}
 </div>
 
 <div class="form-group">
@@ -36,7 +36,7 @@
     {{ Form::textarea('article',$post->article) }}
 </div>
 
-{{ Form::submit('Enregistrer',['class'=>'btn pull-right']) }}
+{{ Form::submit('Enregistrer',['class'=>'btn pull-left']) }}
 
 {{ Form::close() }}
 

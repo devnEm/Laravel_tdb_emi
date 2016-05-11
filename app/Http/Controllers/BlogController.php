@@ -50,7 +50,7 @@ class BlogController extends Controller
         $post = Post::where('id',$id)->delete();
         
 
-        return redirect()->action('AdminController@redaction');
+        return redirect()->action('BlogController@redaction');
     }
 
     public function editPost($id)
@@ -92,7 +92,7 @@ class BlogController extends Controller
 
         $article->update();
 
-        return redirect()->action('AdminController@redaction');
+        return redirect()->action('BlogController@redaction');
     }
 
     public function storePost(Request $request)
@@ -136,7 +136,7 @@ class BlogController extends Controller
 
         $article->save();
 
-        return redirect()->action('AdminController@redaction');
+        return redirect()->action('BlogController@redaction');
     }
 
     public function getAllPosts()
@@ -173,6 +173,6 @@ class BlogController extends Controller
         
         $category->save();
 
-        return redirect()->action('AdminController@redaction');
+        return redirect()->action('BlogController@redaction');
     }
 }

@@ -62,7 +62,7 @@ class HomeController extends Controller
 
         // var_dump($totalGazetteOb);die;
         
-        return view('home',['avenants'=>$avenants,'ventes'=>$ventes,'month'=>$month,'percentTotalGazette'=>$percentTotalGazette,'percentTotalVerticaux'=>$percentTotalVerticaux,'percentTotalEvenement'=>$percentTotalEvenement,"t1"=>$trim1,"t2"=>$trim2,"t3"=>$trim3,"t4"=>$trim4,]);
+        return view('app.home',['avenants'=>$avenants,'ventes'=>$ventes,'month'=>$month,'percentTotalGazette'=>$percentTotalGazette,'percentTotalVerticaux'=>$percentTotalVerticaux,'percentTotalEvenement'=>$percentTotalEvenement,"t1"=>$trim1,"t2"=>$trim2,"t3"=>$trim3,"t4"=>$trim4,]);
 
     }
 
