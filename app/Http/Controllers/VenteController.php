@@ -19,12 +19,13 @@ use Carbon\Carbon;
 
 class VenteController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
 
-    /**
-     * Show the form to create a new blog post.
-     *
-     * @return Response
-     */
+    }
+
+    
     public function create()
     {
         $user_id = Auth::user()->id;
@@ -35,9 +36,6 @@ class VenteController extends Controller
         $ventes= Vente::select()->where('user_id',$user_id)->get();
 
 
-//        echo ('<pre>');
-//        var_dump($ventes);
-//        echo ('</pre>');die;
 
         return view('vente',['mois_label'=>$mois_label,'support_label'=>$support_label,'ventes'=>$ventes]);
     }

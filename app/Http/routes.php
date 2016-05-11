@@ -16,7 +16,7 @@ setlocale(LC_TIME, 'fr_FR.utf8');
         Carbon::setLocale('fr');
 
 Route::get('/', 'WelcomeController@welcome');
-Route::get('redaction/article/{id}', 'AdminController@showPost');
+Route::get('redaction/article/{id}', 'BlogController@showPost');
 Route::auth();
 
 Route::group(['middleware' => ['auth']], function () {
@@ -35,17 +35,17 @@ Route::group(['middleware' => ['auth']], function () {
 
     Route::get('admin/index', 'AdminController@index');
 
-    Route::get('redaction/index', 'AdminController@redaction');
+    Route::get('redaction/index', 'BlogController@redaction');
 
-    Route::get('redaction/article/delete/{id}', 'AdminController@deletePost');
-    Route::get('redaction/article/edit/{id}', 'AdminController@editPost');
-    Route::post('redaction/article/edit/{id}', 'AdminController@updatePost');
-    Route::get('redaction/create', 'AdminController@createPost');
-    Route::post('redaction/create', 'AdminController@storePost');
-    Route::get('redaction/admin', 'AdminController@getAllPosts');
+    Route::get('redaction/article/delete/{id}', 'BlogController@deletePost');
+    Route::get('redaction/article/edit/{id}', 'BlogController@editPost');
+    Route::post('redaction/article/edit/{id}', 'BlogController@updatePost');
+    Route::get('redaction/create', 'BlogController@createPost');
+    Route::post('redaction/create', 'BlogController@storePost');
+    Route::get('redaction/admin', 'BlogController@getAllPosts');
 
-    Route::get('redaction/category', 'AdminController@createCategory');
-    Route::post('redaction/category', 'AdminController@storeCategory');
+    Route::get('redaction/category', 'BlogController@createCategory');
+    Route::post('redaction/category', 'BlogController@storeCategory');
 
 
 });
