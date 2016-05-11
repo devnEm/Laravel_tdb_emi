@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
-use App\Post;
+use App\User;
 use App\Categorie;
 
 use Auth;
@@ -20,11 +20,12 @@ class AdminController extends Controller
         $this->middleware('auth');
 
     }
-    
+
     public function index()
     {
+        $users = User::get();
 
-        return view('admin');
+        return view('admin',['users'=> $users]);
     }
 
     

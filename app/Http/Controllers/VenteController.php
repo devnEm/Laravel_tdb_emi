@@ -37,7 +37,7 @@ class VenteController extends Controller
 
 
 
-        return view('vente',['mois_label'=>$mois_label,'support_label'=>$support_label,'ventes'=>$ventes]);
+        return view('app.vente',['mois_label'=>$mois_label,'support_label'=>$support_label,'ventes'=>$ventes]);
     }
 
 

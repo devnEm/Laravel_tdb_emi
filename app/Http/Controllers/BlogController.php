@@ -19,14 +19,14 @@ class BlogController extends Controller
         $this->middleware('auth');
 
     }
-    
+
     public function redaction()
     {
 
         $posts = Post::all();
         $categories = Categorie::all();
 
-        return view('redaction',['posts'=>$posts,'categories'=>$categories]);
+        return view('blog.redaction',['posts'=>$posts,'categories'=>$categories]);
     }
 
     public function showPost($id)
@@ -34,7 +34,7 @@ class BlogController extends Controller
         $post = Post::where('id', $id)->first();
         
 
-        return view('post',['post'=>$post]);
+        return view('blog.post',['post'=>$post]);
     }
 
     public function createPost()
@@ -42,7 +42,7 @@ class BlogController extends Controller
         $posts = Post::all();
         $categories_label = Categorie::all()->pluck('label');
 
-        return view('createPost',['posts'=>$posts,'categories_label'=>$categories_label]);
+        return view('blog.createPost',['posts'=>$posts,'categories_label'=>$categories_label]);
     }
 
     public function deletePost($id)
@@ -58,7 +58,7 @@ class BlogController extends Controller
         $post = Post::where('id',$id)->first();
         $categories_label = Categorie::all()->pluck('label');
 
-        return view('editPost',['post'=>$post,'categories_label'=>$categories_label]);
+        return view('blog.editPost',['post'=>$post,'categories_label'=>$categories_label]);
     }
 
     public function updatePost($id, Request $request)
@@ -151,7 +151,7 @@ class BlogController extends Controller
         
         $categories = Categorie::all();
 
-        return view('createCategory',['categories'=>$categories]);
+        return view('blog.createCategory',['categories'=>$categories]);
     }
 
     public function storeCategory(Request $request)

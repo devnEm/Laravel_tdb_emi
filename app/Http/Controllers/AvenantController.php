@@ -45,7 +45,7 @@ class AvenantController extends Controller
 
 
 
-        return view('avenant',[
+        return view('app.avenant',[
             'mois_label'=>$mois_label,
             'support_label'=>$support_label,
             'avenants'=>$avenants
