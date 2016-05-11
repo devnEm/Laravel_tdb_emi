@@ -10,6 +10,10 @@
 | and give it the controller to call when that URI is requested.
 |
 */
+use Carbon\Carbon;
+
+setlocale(LC_TIME, 'fr_FR.utf8');
+        Carbon::setLocale('fr');
 
 Route::get('/', 'WelcomeController@welcome');
 Route::get('redaction/article/{id}', 'AdminController@showPost');
