@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Repositories;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -13,6 +13,6 @@ class Mois extends Model
 
     public function produit()
     {
-        return $this->belongsTo('App\Produit');
+        return $this->belongsTo('App\Repositories\Produit');
     }
 }

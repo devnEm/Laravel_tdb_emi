@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Repositories;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -17,6 +17,6 @@ class Post extends Model
 
     public function categorie(){
 
-    	return $this->hasOne('App\Categorie','id','categorie_id');
+    	return $this->hasOne('App\Repositories\Categorie','id','categorie_id');
     }
 }

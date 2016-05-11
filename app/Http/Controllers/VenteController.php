@@ -9,11 +9,11 @@ use Illuminate\Support\Facades\DB;
 use Validator;
 use Auth;
 
-use App\Produit;
-use App\Vente;
-use App\Mois;
-use App\Support;
-use App\Avenant;
+use App\Repositories\Produit;
+use App\Repositories\Vente;
+use App\Repositories\Mois;
+use App\Repositories\Support;
+use App\Repositories\Avenant;
 
 use Carbon\Carbon;
 

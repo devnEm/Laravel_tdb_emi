@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Repositories;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -19,22 +19,22 @@ class Produit extends Model
 
     public function ventes()
     {
-        return $this->belongsTo('App\Vente');
+        return $this->belongsTo('App\Repositories\Vente');
     }
 
     public function mois()
     {
-        return $this->hasOne('App\Mois','id','mois_id');
+        return $this->hasOne('App\Repositories\Mois','id','mois_id');
     }
     
     public function support()
     {
-        return $this->hasOne('App\Support','id','support_id');
+        return $this->hasOne('App\Repositories\Support','id','support_id');
     }
 
     public function avenant()
     {
-        return $this->belongsTo('App\Avenant','avenant_id');
+        return $this->belongsTo('App\Repositories\Avenant','avenant_id');
 
     }
 

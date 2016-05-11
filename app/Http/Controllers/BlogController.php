@@ -6,8 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
-use App\Post;
-use App\Categorie;
+use App\Repositories\Post;
+use App\Repositories\Categorie;
 
 use Auth;
 use Validator;

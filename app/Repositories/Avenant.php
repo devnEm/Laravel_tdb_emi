@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Repositories;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -24,9 +24,9 @@ class Avenant extends Model
     public function produit()
     {
 
-        return $this->hasOne('App\Produit', 'id','produit_id');
+        return $this->hasOne('App\Repositories\Produit', 'id','produit_id');
 
-        return $this->hasOne('App\Produit','produit_id');
+        return $this->hasOne('App\Repositories\Produit','produit_id');
 
     }
 

@@ -5,10 +5,10 @@ namespace App\Http\Controllers;
 use App\Http\Requests;
 use Illuminate\Http\Request;
 
-use App\Avenant;
-use App\Vente;
-use App\Produit;
-use App\Support;
+use App\Repositories\Avenant;
+use App\Repositories\Vente;
+use App\Repositories\Produit;
+use App\Repositories\Support;
 use Auth;
 use Carbon\Carbon;
 
