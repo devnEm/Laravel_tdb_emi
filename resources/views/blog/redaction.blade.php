@@ -30,6 +30,7 @@
                                 <td></td>
                                 <td></td>
                                 <td>créé le</td>
+                                <td>modifié le</td>
                                 </thead>
                                 <tbody>
                                 @foreach($posts as $post)
@@ -42,6 +43,7 @@
                                         <td><a href="{{ url('redaction/article/edit', $post->id ) }}"><button>editer</button></a></td>
                                         <td><a href="{{ url('redaction/article', $post->id ) }}"><button>voir</button></a></td>
                                         <td>{{$post->created_at->formatLocalized('%d %B %Y')}}</td>
+                                        <td>{{$post->updated_at->formatLocalized('%d %B %Y')}}</td>
                                     </tr>
                                 @endforeach
                                 </tbody>

@@ -13,7 +13,7 @@
 use Carbon\Carbon;
 
 setlocale(LC_TIME, 'fr_FR.utf8');
-        Carbon::setLocale('fr');
+Carbon::setLocale('fr');
 
 Route::get('/', 'WelcomeController@welcome');
 Route::get('redaction/article/{id}', 'BlogController@showPost');
