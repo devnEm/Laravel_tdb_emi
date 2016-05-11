@@ -34,7 +34,7 @@
                         
                         <tr>
                             <td>CZECH</td>
-                            <td><a href="http://www.czechav.com/members" target="blank" alt='CZECH'>c'est parti</a></td>
+                            <td><a href="http://www.czechav.com/members/login/?next=/members/" target="blank" alt='CZECH'>c'est parti</a></td>
                             
                         </tr>
                         

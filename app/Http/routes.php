@@ -15,9 +15,12 @@ use Carbon\Carbon;
 setlocale(LC_TIME, 'fr_FR.utf8');
 Carbon::setLocale('fr');
 
-Route::get('/', 'WelcomeController@welcome');
-Route::get('redaction/article/{id}', 'BlogController@showPost');
-Route::auth();
+Route::group(['middleware' => ['web']], function () {
+
+    Route::get('/', 'WelcomeController@welcome');
+    Route::get('redaction/article/{id}', 'BlogController@showPost');
+    Route::auth();
+});
 
 Route::group(['middleware' => ['auth']], function () {
 

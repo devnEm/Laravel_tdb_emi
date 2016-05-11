@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-6 col-md-offset-3">
             <div class="panel panel-default">
                 <div class="panel-heading"><h4>Bienvenue</h4></div>
 
@@ -22,7 +22,7 @@
                                 <div class="panel panel-default">
                                     <div class="panel-body">
                                         <p>
-                                            <h2>{!! $post->titre !!}</h2>
+                                            <h2><a href="{{ url('redaction/article', $post->id ) }}" >{!! $post->titre !!}</a></h2>
                                             <label>Crée le : </label> {{$post->created_at->formatLocalized('%d %B %Y')}}
                                         </p>
                                         <p>
@@ -34,10 +34,11 @@
                             <hr>
 
                             @elseif($post->isPublic)
+
                             <div class="panel panel-default">
                                 <div class="panel-body">
                                     <p>
-                                        <h2>{!! $post->titre !!}</h2>
+                                        <h2><a href="{{ url('redaction/article', $post->id ) }}" >{!! $post->titre !!}</a></h2>
                                         <label>Crée le : </label> {{$post->created_at->formatLocalized('%d %B %Y')}}
                                     </p>
                                     <p>
@@ -45,6 +46,7 @@
                                     </p>
                                 </div>
                             </div>
+
                         
                             @endif
                         @endif
@@ -71,7 +73,7 @@
                     @foreach ($posts as $post)
                         @if($post->categorie->label == 'commercial')
                         <article>
-                            <h4><label>{{$post->titre}}</label></h4>
+                            <h4><a href="{{ url('redaction/article', $post->id ) }}" ><label>{{$post->titre}}</label></a></h4>
                             <p>{{$post->intro}}</p>
                             <hr>
                         </article>

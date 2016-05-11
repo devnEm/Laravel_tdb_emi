@@ -14,11 +14,7 @@ use Validator;
 
 class BlogController extends Controller
 {
-	public function __construct()
-    {
-        $this->middleware('auth');
 
-    }
 
     public function redaction()
     {
