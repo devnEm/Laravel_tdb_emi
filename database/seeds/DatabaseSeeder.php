@@ -1,12 +1,12 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\User;
-use App\Produit;
-use App\Avenant;
-use App\Mois;
-use App\Support;
-use App\Categorie;
+use App\Models\User;
+use App\Models\Produit;
+use App\Models\Avenant;
+use App\Models\Mois;
+use App\Models\Support;
+use App\Models\Categorie;
 
 
 class DatabaseSeeder extends Seeder
