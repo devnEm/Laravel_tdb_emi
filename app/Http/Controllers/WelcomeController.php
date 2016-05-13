@@ -16,4 +16,6 @@ class WelcomeController extends Controller
 
         return view('welcome', ['posts'=>$posts]);
     }
+
+    
 }

@@ -4,21 +4,21 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "f3537801e85ff7e2f063b1bbb3508d03",
-    "content-hash": "71518fbcbb2917562dccafa4828b9a75",
+    "hash": "ba449fc5d3a5e89871c409cb4460fb8e",
+    "content-hash": "7276f9b1a190b1f74bf217ada5ecbc9d",
     "packages": [
         {
             "name": "caouecs/laravel-lang",
-            "version": "3.0.1",
+            "version": "3.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/caouecs/Laravel-lang.git",
-                "reference": "21b4df6d025231102e96eb1d17dc2a8f02b8dbcc"
+                "reference": "f979ac1cf279001e877a48cb212c7200e76c121b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/caouecs/Laravel-lang/zipball/21b4df6d025231102e96eb1d17dc2a8f02b8dbcc",
-                "reference": "21b4df6d025231102e96eb1d17dc2a8f02b8dbcc",
+                "url": "https://api.github.com/repos/caouecs/Laravel-lang/zipball/f979ac1cf279001e877a48cb212c7200e76c121b",
+                "reference": "f979ac1cf279001e877a48cb212c7200e76c121b",
                 "shasum": ""
             },
             "require-dev": {
@@ -45,7 +45,7 @@
                 "laravel",
                 "lpm"
             ],
-            "time": "2016-05-07 06:40:52"
+            "time": "2016-05-11 14:40:08"
         },
         {
             "name": "classpreloader/classpreloader",
@@ -391,6 +391,52 @@
                 "tokenizer"
             ],
             "time": "2015-12-05 17:17:57"
+        },
+        {
+            "name": "jrean/laravel-user-verification",
+            "version": "v2.2.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jrean/laravel-user-verification.git",
+                "reference": "3b4dee362f0500419787ada10377b15e846e8462"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jrean/laravel-user-verification/zipball/3b4dee362f0500419787ada10377b15e846e8462",
+                "reference": "3b4dee362f0500419787ada10377b15e846e8462",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "5.0.*|5.1.*|5.2.*",
+                "php": ">=5.5.9"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.7.6"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Jrean\\UserVerification\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jean Ragouin",
+                    "email": "go@askjong.com"
+                }
+            ],
+            "description": "User Email Verification For Laravel 5.*",
+            "keywords": [
+                "email verification",
+                "framework",
+                "laravel",
+                "user verification"
+            ],
+            "time": "2016-04-13 11:04:26"
         },
         {
             "name": "ktquez/laravel-tinymce",
@@ -2438,20 +2484,23 @@
         },
         {
             "name": "phpunit/php-timer",
-            "version": "1.0.7",
+            "version": "1.0.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-timer.git",
-                "reference": "3e82f4e9fc92665fafd9157568e4dcb01d014e5b"
+                "reference": "38e9124049cf1a164f1e4537caf19c99bf1eb260"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-timer/zipball/3e82f4e9fc92665fafd9157568e4dcb01d014e5b",
-                "reference": "3e82f4e9fc92665fafd9157568e4dcb01d014e5b",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-timer/zipball/38e9124049cf1a164f1e4537caf19c99bf1eb260",
+                "reference": "38e9124049cf1a164f1e4537caf19c99bf1eb260",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.3"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4|~5"
             },
             "type": "library",
             "autoload": {
@@ -2475,7 +2524,7 @@
             "keywords": [
                 "timer"
             ],
-            "time": "2015-06-21 08:01:12"
+            "time": "2016-05-12 18:03:57"
         },
         {
             "name": "phpunit/php-token-stream",

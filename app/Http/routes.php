@@ -19,6 +19,8 @@ Route::group(['middleware' => ['web']], function () {
 
     Route::get('/', 'WelcomeController@welcome');
     Route::get('redaction/article/{id}', 'BlogController@showPost');
+    Route::get('verification/error', 'Auth\AuthController@getVerificationError');
+    Route::get('verification/{token}', 'Auth\AuthController@getVerification');
     Route::auth();
 });
 
@@ -26,6 +28,7 @@ Route::group(['middleware' => ['auth']], function () {
 
 
     Route::get('admin/index', 'AdminController@index');
+    Route::get('admin/register_mail/{id}', 'AdminController@sendRegisterEmail');
 
     Route::get('home', 'HomeController@index');
 

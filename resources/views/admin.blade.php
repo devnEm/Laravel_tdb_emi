@@ -9,6 +9,7 @@
                     <thead>
                         <td>Nom</td>
                         <td>mail</td>
+                        <td></td>
                         <td>crée le</td>
                     </thead>
                     <tbody>
@@ -16,6 +17,9 @@
                         <tr>
                             <td>{{$user->name}}</td>
                             <td>{{$user->email}}</td>
+                            <td>
+                                <a href="{{url('admin/register_mail', $user->id)}}">Send Mail</a>
+                            </td>
                             <td>{{$user->created_at->formatLocalized('%d %B %Y')}}</td>
                         </tr>
                         @endforeach

@@ -160,6 +160,7 @@ return [
 
         Collective\Html\HtmlServiceProvider::class,
         Ktquez\Tinymce\TinymceServiceProvider::class,
+        Jrean\UserVerification\UserVerificationServiceProvider::class,
 
 
     ],
@@ -210,6 +211,7 @@ return [
 
         'Form'  => Collective\Html\FormFacade::class,
         'Html'  => Collective\Html\HtmlFacade::class,
+        'UserVerification' => Jrean\UserVerification\Facades\UserVerification::class,
 
     ],
 
