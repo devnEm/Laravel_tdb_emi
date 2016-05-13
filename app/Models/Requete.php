@@ -9,4 +9,9 @@ class Requete extends Model
    protected $fillable = [
         'titre', 'message','reponse', 'statut'
     ];
+
+    public function user()
+    {
+        return $this->hasOne('App\Models\User','id','user_id');
+    }
 }

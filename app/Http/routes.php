@@ -28,9 +28,13 @@ Route::group(['middleware' => ['auth']], function () {
 
 
     Route::get('admin/index', 'AdminController@index');
-    Route::get('admin/register_mail/{id}', 'AdminController@sendRegisterEmail');
     Route::get('requete','AdminController@createRequest');
     Route::post('requete','AdminController@storeRequest');
+    Route::get('requete/{id}','AdminController@showRequest');
+    Route::post('requete/reponse{id}','AdminController@storeResponse');
+    Route::get('reponse/{id}','AdminController@showResponse');
+
+
 
     Route::get('home', 'HomeController@index');
 

@@ -22,15 +22,22 @@
 				
 				<table class="table">
 					<thead>
-						<td>Sujet<td>
-						<td>Statut<td>
+						<td>Sujet</td>
+						<td>Statut</td>
+						<td></td>
 					</thead>
 					<tbody>
 					@foreach($requests as $request)
 						<tr>
-							<td>{{$request->titre}}</td>
-							<td>{{$request->statut}}</td>
-						</tr>
+                            @if($request->statut == 'new')
+                                <td><strong>{{$request->titre}}</strong></td>
+                                <td><strong>{{$request->statut}}</strong></td>
+                            @else
+                                <td>{{$request->titre}}</td>
+                                <td>{{$request->statut}}</td>
+                            @endif
+                            	<td><a href="{{url('/reponse',$request->id)}}">voir</a></td>                                
+                        </tr>
 					@endforeach						
 					</tbody>
 				</table>

@@ -25,25 +25,12 @@ class AdminController extends Controller
     public function index()
     {
         $users = User::get();
+        $requests = Requete::get();
 
-        return view('admin',['users'=> $users]);
+        return view('admin.admin',['users'=> $users],['requests'=>$requests]);
     }
 
-    public function sendRegisterEmail(Request $request, $id)
-    {
 
-    	
-        $user = User::findOrFail($id);
-
-        Mail::send('emails.register', ['user' => $user], function ($m) use ($user) {
-        	
-            $m->from('test@app.com', 'CatBackup_');
-
-            $m->to($user->email, $user->name)->subject('Register Key');
-        });
-
-        
-    }
 
     public function createRequest(){
 
@@ -74,6 +61,49 @@ class AdminController extends Controller
 
 
         return redirect()->action('AdminController@createRequest');
+
+    }
+
+    public function showRequest($id){
+
+        
+
+        $request= Requete::where('id', $id)->first();
+
+        $request->statut = 'lu';
+        $request->update();
+
+        return view('admin.request',['request'=>$request]);
+
+    }
+
+    public function storeResponse(Request $request, $id){
+
+        
+
+        $rules=[
+            
+            'response'=>'required'
+        ];
+ 
+        $validator= Validator::make($request->all(),$rules);
+
+        $requete = Requete::where('id',$id)->first();
+
+        $requete->reponse=$request->input('reponse');
+        $requete->statut = 'done' ;
+
+        $requete->update();
+
+
+        return redirect()->action('AdminController@index');
+
+    }
+    public function showResponse($id){
+
+        $request= Requete::where('id', $id)->first();
+
+        return view('app.reponse',['request'=>$request]);
 
     }
 
