@@ -17,6 +17,7 @@ class CreatePostsTable extends Migration
             $table->string('titre');
             $table->string('intro');
             $table->longText('article');
+            $table->integer('view');
             $table->boolean('isPublic');
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users');

@@ -29,6 +29,8 @@ class BlogController extends Controller
     {
         $post = Post::where('id', $id)->first();
         
+        $post->view += 1;
+        $post->update();
 
         return view('blog.post',['post'=>$post]);
     }

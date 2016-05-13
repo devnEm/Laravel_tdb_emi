@@ -26,6 +26,7 @@
                                 <td>titre</td>
                                 <td>Public</td>
                                 <td>Catégorie</td>
+                                <td>View</td>
                                 <td></td>
                                 <td></td>
                                 <td></td>
@@ -39,6 +40,7 @@
                                         <td>{{$post->titre}}</td>
                                         <td>{{$post->isPublic}}</td>
                                         <td>{{$post->categorie->label}}</td>
+                                        <td>{{$post->view}}</td>
                                         <td><a href="{{ url('redaction/article/delete', $post->id ) }}"><button>supprimer</button></a></td>
                                         <td><a href="{{ url('redaction/article/edit', $post->id ) }}"><button>editer</button></a></td>
                                         <td><a href="{{ url('redaction/article', $post->id ) }}"><button>voir</button></a></td>
