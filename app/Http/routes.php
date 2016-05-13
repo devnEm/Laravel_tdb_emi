@@ -34,6 +34,9 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('requete/reponse{id}','AdminController@storeResponse');
     Route::get('reponse/{id}','AdminController@showResponse');
 
+    Route::get('profil','UserController@profil');
+    Route::post('profil/update/{id}','UserController@updateProfil');
+
 
 
     Route::get('home', 'HomeController@index');
