@@ -66,6 +66,7 @@
                     <li><a href="{{ url('/home') }}">Mon Suivi</a></li>
                     <li><a href="{{ url('/vente') }}">Mes Ventes</a></li>
                     <li><a href="{{ url('/avenant') }}">Mon Avenant</a></li>
+                    <li><a href="{{ url('/requete') }}">Requete</a></li>
                     {{--<li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>--}}
                 </ul>
                         @endif

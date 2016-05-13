@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 
 use App\User;
+use App\Models\Requete;
 
 use Mail;
 use Auth;
@@ -42,6 +43,38 @@ class AdminController extends Controller
         });
 
         
+    }
+
+    public function createRequest(){
+
+        $user_id = Auth::user()->id;
+
+        $requests= Requete::where('user_id', $user_id)->get();
+
+        return view('app.request',['requests'=>$requests]);
+
+    }
+
+    public function storeRequest(Request $request){
+
+        $rules=[
+            'titre' => 'required',
+            'message' => 'required'
+        ];
+ 
+        $validator= Validator::make($request->all(),$rules);
+
+        $requete = new Requete();
+        $requete->titre=$request->input('titre');
+        $requete->message=$request->input('message');
+        $requete->user_id= Auth::user()->id;
+        $requete->statut = 'new' ;
+
+        $requete->save();
+
+
+        return redirect()->action('AdminController@createRequest');
+
     }
 
     

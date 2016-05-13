@@ -24,11 +24,13 @@ class DatabaseSeeder extends Seeder
             'email'     =>  'admin@example.com',
             'password'  =>  bcrypt('azerty'),
             'isAdmin'    =>  true,
+            'verified' => 1 ,
         ]);
         User::create([
             'name'      => 'devnem',
             'email'     =>  'devnem@example.com',
             'password'  =>  bcrypt('azerty'),
+            'verified' => 1 ,
         ]);
 
 
