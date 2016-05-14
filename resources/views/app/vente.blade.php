@@ -67,7 +67,7 @@
                                     <td>{{$vente->produit->support->label}}</td>
 
                                     <td>{{number_format($vente->montant, 2, ',', ' ')}}</td>
-                                    <td><a class="confirmLink" href="{{ url('vente/delete', $vente->id ) }}"><button>supprimer</button></a></td>
+                                    <td><a class="del" href="{{ url('vente/delete', $vente->id ) }}"><button>supprimer</button></a></td>
 
                                 </tr>
                                 @endforeach
