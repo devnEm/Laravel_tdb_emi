@@ -29,7 +29,7 @@
                                         </div>
                                     </div>
                                 </td>
-                                <td><a href="{{ url('avenant/delete', $avenant->id ) }}"><button>supprimer</button></a></td>
+                                <td><a class="del" href="{{ url('avenant/delete', $avenant->id ) }}"><button>supprimer</button></a></td>
                             </tr>
                         @endforeach
                         </tbody>

@@ -41,7 +41,7 @@
                                         <td>{{$post->isPublic}}</td>
                                         <td>{{$post->categorie->label}}</td>
                                         <td>{{$post->view}}</td>
-                                        <td><a href="{{ url('redaction/article/delete', $post->id ) }}"><button>supprimer</button></a></td>
+                                        <td><a class="del" href="{{ url('redaction/article/delete', $post->id ) }}"><button>supprimer</button></a></td>
                                         <td><a href="{{ url('redaction/article/edit', $post->id ) }}"><button>editer</button></a></td>
                                         <td><a href="{{ url('redaction/article', $post->id ) }}"><button>voir</button></a></td>
                                         <td>{{$post->created_at->formatLocalized('%d %B %Y')}}</td>
