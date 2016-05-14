@@ -8,7 +8,7 @@
 				{{Form::open(array('url' =>'requete/reponse'.$request->id,'method'=>'POST'))}}
 
 				{{Form::label('reponse','Réponse : ')}}
-				{{Form::textarea('repponse')}}
+				{{Form::textarea('reponse')}}
 
 				{{Form::submit('envoyer')}}
 				{{Form::close()}}

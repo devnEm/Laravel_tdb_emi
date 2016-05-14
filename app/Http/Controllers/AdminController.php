@@ -83,7 +83,7 @@ class AdminController extends Controller
 
         $rules=[
             
-            'response'=>'required'
+            'reponse'=>'required'
         ];
  
         $validator= Validator::make($request->all(),$rules);
