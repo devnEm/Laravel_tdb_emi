@@ -47,7 +47,7 @@
                     <div class="panel panel-default">
                         <div class="panel-heading"><h4>Toutes mes ventes</h4></div>
 
-                        <div class="panel-body">
+
                             
                             <table class="table">
                                 <thead>
@@ -67,13 +67,15 @@
                                     <td>{{$vente->produit->support->label}}</td>
 
                                     <td>{{number_format($vente->montant, 2, ',', ' ')}}</td>
-                                    <td><a href="{{ url('vente/delete', $vente->id ) }}"><button>supprimer</button></a></td>
+                                    <td><a class="confirmLink" href="{{ url('vente/delete', $vente->id ) }}"><button>supprimer</button></a></td>
 
                                 </tr>
                                 @endforeach
 
                                 </tbody>
                             </table>
+
+
 
                         </div>
                     </div>
