@@ -10,7 +10,7 @@
     <!-- Fonts -->
     <link href='https://fonts.googleapis.com/css?family=Ubuntu:400,300,500,700,300italic,400italic,500italic,700italic' rel='stylesheet' type='text/css'>
 
-    @include('tinymce::tpl')
+
     <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -26,10 +26,6 @@
     {{ Html::style('css/admin.css') }}
 
 
-
-    <style>
-
-    </style>
 </head>
 <body id="app-layout">
 

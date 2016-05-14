@@ -24,6 +24,7 @@
                     <ul class="nav navbar-nav">
                         <li><a href="{{ url('/admin/index') }}">Admin</a></li>
                         <li><a href="{{ url('/redaction/index') }}">Redaction</a></li>
+                        <li><a href="{{ url('/requete') }}">Requete</a></li>
                         {{--<li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>--}}
                     </ul>
                     @else
@@ -50,10 +51,15 @@
 
                         <ul class="dropdown-menu" role="menu">
                             @if (Auth::user()->isAdmin)
+                                <li><a href="{{ url('/') }}"><i class="fa fa-btn"></i>Accueil</a></li>
                                 <li><a href="{{ url('/admin/index') }}"><i class="fa fa-btn"></i>Admin</a></li>
                                 <li><a href="{{ url('/home') }}"><i class="fa fa-btn"></i>Commercial</a></li>
+                                <li><a href="{{ url('/requete') }}">Requete</a></li>
                                 <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
                             @else
+                                <li><a href="{{ url('/') }}"><i class="fa fa-btn"></i>Accueil</a></li>
+                                <li><a href="{{ url('/home') }}"><i class="fa fa-btn"></i>Commercial</a></li>
+                                <li><a href="{{ url('/requete') }}">Requete</a></li>
                                 <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
                             @endif
 

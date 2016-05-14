@@ -26,9 +26,6 @@
     {{ Html::style('css/app.css') }}
 
 
-    <style>
-
-    </style>
 </head>
 <body id="app-layout">
     <nav class="navbar navbar-default navbar-static-top">
@@ -66,7 +63,7 @@
                     <li><a href="{{ url('/home') }}">Mon Suivi</a></li>
                     <li><a href="{{ url('/vente') }}">Mes Ventes</a></li>
                     <li><a href="{{ url('/avenant') }}">Mon Avenant</a></li>
-                    <li><a href="{{ url('/requete') }}">Requete</a></li>
+
                     {{--<li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>--}}
                 </ul>
                         @endif
@@ -85,10 +82,14 @@
 
                             <ul class="dropdown-menu" role="menu">
                                 @if (Auth::user()->isAdmin)
+                                    <li><a href="{{ url('/') }}"><i class="fa fa-btn"></i>Accueil</a></li>
                                     <li><a href="{{ url('/admin/index') }}"><i class="fa fa-btn"></i>Admin</a></li>
                                     <li><a href="{{ url('/home') }}"><i class="fa fa-btn"></i>Commercial</a></li>
+                                    <li><a href="{{ url('/requete') }}">Requete</a></li>
                                     <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
                                 @else
+                                    <li><a href="{{ url('/') }}"><i class="fa fa-btn"></i>Accueil</a></li>
+                                    <li><a href="{{ url('/requete') }}">Requete</a></li>
                                     <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
                                 @endif
 

@@ -3,8 +3,9 @@
 
 @section('content')
     <div class="container">
+        @include('tinymce::tpl')
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-8 col-md-offset-2">
 
 
 
@@ -14,7 +15,7 @@
 
 
                     <div class="panel-body">
-                        <div class="col-md-9">
+                        <div class="col-md-12">
                             {{ Form::open(array('url'=>'/redaction/create')) }}
 
                             <div class="form-group">
