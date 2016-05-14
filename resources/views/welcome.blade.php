@@ -29,6 +29,25 @@
                 </div>
             </div>
         </div>
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading"><h4>Liens</h4></div>
+                @foreach($liens as $lien)
+                    <ul class="nav">
+
+                        @if($lien->statut == 'isPublic')
+
+                            <li><a href="{{$lien->url}}" target="blank" alt='{{$lien->titre}}' class="btn btn-info">{{$lien->titre}}</a></li>
+
+
+                        @endif
+
+                    </ul>
+                @endforeach
+                <div class="panel-body">
+                </div>
+            </div>
+        </div>
         
 
         @if (Auth::check())

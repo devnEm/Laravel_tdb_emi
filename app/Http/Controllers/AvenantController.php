@@ -8,10 +8,10 @@ use App\Http\Requests;
 use Validator;
 use Auth;
 
-use App\Repositories\Avenant;
-use App\Repositories\Produit;
-use App\Repositories\Mois;
-use App\Repositories\Support;
+use App\Models\Avenant;
+use App\Models\Produit;
+use App\Models\Mois;
+use App\Models\Support;
 
 class AvenantController extends Controller
 {

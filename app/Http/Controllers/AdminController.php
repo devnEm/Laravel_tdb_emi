@@ -6,8 +6,9 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
-use App\User;
+use App\Models\User;
 use App\Models\Requete;
+use App\Models\Lien;
 
 use Mail;
 use Auth;
@@ -26,8 +27,9 @@ class AdminController extends Controller
     {
         $users = User::get();
         $requests = Requete::get();
+        $liens= Lien::all();
 
-        return view('admin.admin',['users'=> $users],['requests'=>$requests]);
+        return view('admin.admin',['users'=> $users,'requests'=>$requests,'liens'=>$liens]);
     }
 
 

@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-4">
             <div class="panel panel-default">
             <label>Mes utilisateurs</label>
                 <table class="table">
@@ -24,7 +24,7 @@
                 </table>
             </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-4">
             <div class="panel panel-default">
                 <label>Mes liens</label>
                 <table class="table">
@@ -35,50 +35,61 @@
                     </thead>
                     <tbody>
                         
-                        <tr>
-                            <td>CZECH</td>
-                            <td><a href="http://www.czechav.com/members/login/?next=/members/" target="blank" alt='CZECH'>c'est parti</a></td>
-                            
-                        </tr>
+
+                            @foreach($liens as $lien)
+                                <tr>
+                            <td>{{$lien->titre}}</td>
+                            <td><a href="{{$lien->url}}" target="blank" alt='{{$lien->titre}}'>c'est parti</a></td>
+                                </tr>
+                            @endforeach
+
                         
                     </tbody>
                 </table>
             </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-md-6">
+
+        <div class="col-md-4">
             <div class="panel panel-default">
-                <label>Mes Message</label>
+                <label>Mes Messages</label>
                 <table class="table">
                     <thead>
-                        <td>Sujet</td>
-                        <td>Utilisateur</td>
-                        <td>Statut</td>
-                        <td>Voir</td>
+                    <td>Sujet</td>
+                    <td>Utilisateur</td>
+                    <td>Statut</td>
+                    <td>Voir</td>
                     </thead>
                     <tbody>
                     @foreach($requests as $request)
-                        @if($request->statut != 'done')
+
                             <tr>
-                            @if($request->statut == 'new')
-                                <td><strong>{{$request->titre}}</strong></td>
-                                <td><strong>{{$request->user->name}}</strong></td>
-                                <td><strong>{{$request->statut}}</strong></td>
-                            @else
-                                <td>{{$request->titre}}</td>
-                                <td>{{$request->user->name}}</td>
-                                <td>{{$request->statut}}</td>
-                            @endif
-                                
+                                @if($request->statut == 'new')
+                                    <td><strong>{{$request->titre}}</strong></td>
+                                    <td><strong>{{$request->user->name}}</strong></td>
+                                    <td><strong>{{$request->statut}}</strong></td>
+                                @elseif($request->statut == 'done')
+                                    <td><small><i>{{$request->titre}}</i></small></td>
+                                    <td><small><i>{{$request->user->name}}</i></small></td>
+                                    <td><small><i>{{$request->statut}}</i></small></td>
+                                @else
+                                    <td>{{$request->titre}}</td>
+                                    <td>{{$request->user->name}}</td>
+                                    <td>{{$request->statut}}</td>
+                                @endif
+
                                 <td>><a href="{{url('/requete',$request->id)}}">voir</a></td>
                             </tr>
-                        @endif
-                    @endforeach                     
+
+                    @endforeach
                     </tbody>
                 </table>
-                
+
             </div>
-            </div>
+        </div>
+        </div>
+        <div class="row">
+
+        </div>
     </div>
+
 @endsection
