@@ -3,6 +3,9 @@
 $body-bg:$fifthBlue ;
 $text-color: $primaryBlue;
 
+$link-hover-color:$myWhite;
+$link-color:$primaryBlue;
+
 $panel-default-text : $myWhite;
 $panel-bg : $myWhite;
 $panel-default-heading-bg: $primaryBlue;
@@ -18,5 +21,11 @@ $navbar-default-brand-hover-bg:$myWhite;
 
 $progress-bg: $grey2;
 $progress-bar-color:$myWhite;
+
+
+body{
+  background-image: url("http://devnem.com/public/img/zen-sand-wallpaper-2560x1600.jpg");
+  font-family: 'Ubuntu', sans-serif;
+}
 
 @import "../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap";

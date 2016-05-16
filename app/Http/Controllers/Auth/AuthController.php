@@ -105,6 +105,6 @@ class AuthController extends Controller
 
         UserVerification::send($user, 'Validation de compte');
 
-        return redirect($this->redirectPath());
+        return redirect($this->redirectPath())->with('status', 'Register Done!');
     }
 }

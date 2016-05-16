@@ -1,4 +1,8 @@
 @charset "UTF-8";
+body {
+  background-image: url("http://devnem.com/public/img/zen-sand-wallpaper-2560x1600.jpg");
+  font-family: 'Ubuntu', sans-serif; }
+
 /*!
  * Bootstrap v3.3.6 (http://getbootstrap.com)
  * Copyright 2011-2015 Twitter, Inc.
@@ -1066,10 +1070,10 @@ textarea {
   line-height: inherit; }
 
 a {
-  color: #337ab7;
+  color: #16193B;
   text-decoration: none; }
   a:hover, a:focus {
-    color: #23527c;
+    color: #F8FBFF;
     text-decoration: underline; }
   a:focus {
     outline: thin dotted;
@@ -3033,7 +3037,7 @@ fieldset[disabled] a.btn {
     background-color: #fff; }
 
 .btn-link {
-  color: #337ab7;
+  color: #16193B;
   font-weight: normal;
   border-radius: 0; }
   .btn-link, .btn-link:active, .btn-link.active, .btn-link[disabled],
@@ -3043,7 +3047,7 @@ fieldset[disabled] a.btn {
   .btn-link, .btn-link:hover, .btn-link:focus, .btn-link:active {
     border-color: transparent; }
   .btn-link:hover, .btn-link:focus {
-    color: #23527c;
+    color: #F8FBFF;
     text-decoration: underline;
     background-color: transparent; }
   .btn-link[disabled]:hover, .btn-link[disabled]:focus,
@@ -3536,7 +3540,7 @@ tbody.collapse.in {
         cursor: not-allowed; }
   .nav .open > a, .nav .open > a:hover, .nav .open > a:focus {
     background-color: #eeeeee;
-    border-color: #337ab7; }
+    border-color: #16193B; }
   .nav .nav-divider {
     height: 1px;
     margin: 9px 0;
@@ -4054,7 +4058,7 @@ tbody.collapse.in {
       padding: 6px 12px;
       line-height: 1.428571429;
       text-decoration: none;
-      color: #337ab7;
+      color: #16193B;
       background-color: #fff;
       border: 1px solid #ddd;
       margin-left: -1px; }
@@ -4071,7 +4075,7 @@ tbody.collapse.in {
   .pagination > li > span:hover,
   .pagination > li > span:focus {
     z-index: 2;
-    color: #23527c;
+    color: #F8FBFF;
     background-color: #eeeeee;
     border-color: #ddd; }
   .pagination > .active > a, .pagination > .active > a:hover, .pagination > .active > a:focus,
@@ -4239,7 +4243,7 @@ a.label:hover, a.label:focus {
     padding: 1px 5px; }
   .list-group-item.active > .badge,
   .nav-pills > .active > a > .badge {
-    color: #337ab7;
+    color: #16193B;
     background-color: #fff; }
   .list-group-item > .badge {
     float: right; }
@@ -4310,7 +4314,7 @@ a.badge:hover, a.badge:focus {
 a.thumbnail:hover,
 a.thumbnail:focus,
 a.thumbnail.active {
-  border-color: #337ab7; }
+  border-color: #16193B; }
 
 .alert {
   padding: 15px;
