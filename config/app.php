@@ -161,6 +161,8 @@ return [
         Collective\Html\HtmlServiceProvider::class,
         Ktquez\Tinymce\TinymceServiceProvider::class,
         Jrean\UserVerification\UserVerificationServiceProvider::class,
+        Laracasts\Utilities\JavaScript\JavaScriptServiceProvider::class,
+        Vinkla\Pusher\PusherServiceProvider::class
 
 
     ],
@@ -212,6 +214,8 @@ return [
         'Form'  => Collective\Html\FormFacade::class,
         'Html'  => Collective\Html\HtmlFacade::class,
         'UserVerification' => Jrean\UserVerification\Facades\UserVerification::class,
+        'JavaScript' => Laracasts\Utilities\JavaScript\JavaScriptServiceProvider::class,
+
 
     ],
 

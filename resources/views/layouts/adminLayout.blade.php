@@ -22,6 +22,13 @@
   ga('send', 'pageview');
 
     </script>
+
+    <!-- JavaScripts -->
+    {{--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>--}}
+    <script src="https://js.pusher.com/3.1/pusher.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+
+
     
     <!-- Styles -->
     {{ Html::style('css/admin.css') }}

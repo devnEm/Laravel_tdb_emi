@@ -12,10 +12,15 @@
 */
 use Carbon\Carbon;
 
+
 setlocale(LC_TIME, 'fr_FR.utf8');
 Carbon::setLocale('fr');
 
 Route::group(['middleware' => ['web']], function () {
+
+    Route::get('/broadcast', 'WelcomeController@broadcast');
+    Route::get('notifications', 'NotificationController@getIndex');
+    Route::post('notifications/notify', 'NotificationController@postNotify');
 
     Route::get('/', 'WelcomeController@welcome');
     Route::get('redaction/article/{id}', 'BlogController@showPost');
