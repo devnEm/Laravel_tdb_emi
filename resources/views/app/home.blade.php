@@ -15,26 +15,7 @@
 
                                     <div class="panel-body">
 
-                                        <label>Gazette</label>
-                                        <div class="progress">
-                                            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow={{round($percentTotalGazette,2)}} aria-valuemin="0" aria-valuemax="100" style="min-width: 2em;width: {{$percentTotalGazette}}%">
-                                                {{round($percentTotalGazette,2)}}%
-                                            </div>
-                                        </div>
-                                        <hr>
-                                        <label>Verticaux</label>
-                                        <div class="progress">
-                                            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="{{round($percentTotalVerticaux,2)}}" aria-valuemin="0" aria-valuemax="100" style="min-width: 2em;width: {{$percentTotalVerticaux}}%">
-                                                {{round($percentTotalVerticaux,2)}}%
-                                            </div>
-                                        </div>
-                                        <hr>
-                                        <label>Evenement</label>
-                                        <div class="progress">
-                                            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="min-width: 2em;width: {{$percentTotalEvenement}}%">
-                                                {{round($percentTotalEvenement,2)}}%
-                                            </div>
-                                        </div>
+                                        <canvas id="support" width="400" height="400"></canvas>
                                     </div>
                                 </div>
                             </div>
@@ -70,30 +51,11 @@
                                 <div class="panel panel-default">
                                     <div class="panel-heading"><h4>Trimestre</h4></div>
 
-                                    <canvas id="myChart" width="400" height="400"></canvas>
+                                    <canvas id="trimestre" width="400" height="400"></canvas>
 
                                 </div>
                                 <script>
-                                    var ctx = document.getElementById("myChart");
-                                    var myChart = new Chart(ctx, {
-                                        type: 'bar',
-                                        data: {
-                                            labels: ["T1", "T2", "T3", "T4"],
-                                            datasets: [{
-                                                label: '% Atteints',
-                                                data: [trim1, trim2, trim3, trim4]
-                                            }]
-                                        },
-                                        options: {
-                                            scales: {
-                                                yAxes: [{
-                                                    ticks: {
-                                                        beginAtZero:true
-                                                    }
-                                                }]
-                                            }
-                                        }
-                                    });
+
                                 </script>
                             </div>
                         </div>

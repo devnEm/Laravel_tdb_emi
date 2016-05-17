@@ -59,10 +59,13 @@ class HomeController extends Controller
         $trim4= (Avenant::where('user_id',$user_id)->whereIn('produit_id',[28,29,30,31,32,33,34,35,36])->sum('realise'))/(Avenant::where('user_id',$user_id)->whereIn('produit_id',[28,29,30,31,32,33,34,35,36])->sum('objectif'))*100;
 
         JavaScript::put([
-            'trim1' => $trim1,
-            'trim2' => $trim2,
-            'trim3' => $trim3,
-            'trim4' => $trim4
+            'trim1' => round($trim1,2),
+            'trim2' => round($trim2,2),
+            'trim3' => round($trim3,2),
+            'trim4' => round($trim4,2),
+            'gazette' => round($percentTotalGazette,2),
+            'verticaux' => round($percentTotalVerticaux,2),
+            'evenement' => round($percentTotalEvenement,2)
 
         ]);
 
