@@ -10,6 +10,8 @@ use App\Models\Vente;
 use Auth;
 use Carbon\Carbon;
 
+use JavaScript;
+
 
 class HomeController extends Controller
 {
@@ -56,7 +58,13 @@ class HomeController extends Controller
         $trim3= (Avenant::where('user_id',$user_id)->whereIn('produit_id',[19,20,21,22,23,24,25,26,27])->sum('realise'))/(Avenant::where('user_id',$user_id)->whereIn('produit_id',[19,20,21,22,23,24,25,26,27])->sum('objectif'))*100;
         $trim4= (Avenant::where('user_id',$user_id)->whereIn('produit_id',[28,29,30,31,32,33,34,35,36])->sum('realise'))/(Avenant::where('user_id',$user_id)->whereIn('produit_id',[28,29,30,31,32,33,34,35,36])->sum('objectif'))*100;
 
-        
+        JavaScript::put([
+            'trim1' => $trim1,
+            'trim2' => $trim2,
+            'trim3' => $trim3,
+            'trim4' => $trim4
+
+        ]);
 
         // var_dump($totalGazetteOb);die;
         

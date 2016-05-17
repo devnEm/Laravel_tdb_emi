@@ -70,34 +70,31 @@
                                 <div class="panel panel-default">
                                     <div class="panel-heading"><h4>Trimestre</h4></div>
 
-                                    <div class="panel-body">
-                                        T1:
-                                        <div class="progress">
-                                            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="2" aria-valuemax="100" style="min-width: 2em;width: {{$t1}}%">
-                                                {{round($t1)}}%
-                                            </div>
-                                        </div>
-                                        <label>T2</label>
-                                        <div class="progress">
-                                            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="2" aria-valuemax="100" style="min-width: 2em;width: {{$t2}}%">
-                                                {{round($t2)}}%
-                                            </div>
-                                        </div>
-                                        <label>T3</label>
-                                        <div class="progress">
-                                            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="2" aria-valuemax="100" style="min-width: 2em;width: {{$t3}}%">
-                                                {{round($t3)}}%
-                                            </div>
-                                        </div>
-                                        <label>T4</label>
-                                        <div class="progress">
-                                            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="2" aria-valuemax="100" style="min-width: 2em;width: {{$t4}}%">
-                                                {{round($t4)}}%
-                                            </div>
-                                        </div>
+                                    <canvas id="myChart" width="400" height="400"></canvas>
 
-                                    </div>
                                 </div>
+                                <script>
+                                    var ctx = document.getElementById("myChart");
+                                    var myChart = new Chart(ctx, {
+                                        type: 'bar',
+                                        data: {
+                                            labels: ["T1", "T2", "T3", "T4"],
+                                            datasets: [{
+                                                label: '% Atteints',
+                                                data: [trim1, trim2, trim3, trim4]
+                                            }]
+                                        },
+                                        options: {
+                                            scales: {
+                                                yAxes: [{
+                                                    ticks: {
+                                                        beginAtZero:true
+                                                    }
+                                                }]
+                                            }
+                                        }
+                                    });
+                                </script>
                             </div>
                         </div>
                         <div class="col-md-12">
@@ -131,7 +128,9 @@
                                 </div>
                             </div>
                         </div>
-
+<script>
+    console.log(foo);
+</script>
 
 
                     </div>
@@ -139,4 +138,7 @@
             </div>
         </div>
     </div>
+
 @endsection
+@include('partials.footer')
+

@@ -11,7 +11,8 @@
         "caouecs/laravel-lang": "~3.0",
         "illuminate/html": "5.*",
         "ktquez/laravel-tinymce": "^1.0",
-        "jrean/laravel-user-verification": "^2.0"
+        "jrean/laravel-user-verification": "^2.0",
+        "laracasts/utilities": "~2.0"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

@@ -161,6 +161,7 @@ return [
         Collective\Html\HtmlServiceProvider::class,
         Ktquez\Tinymce\TinymceServiceProvider::class,
         Jrean\UserVerification\UserVerificationServiceProvider::class,
+        Laracasts\Utilities\JavaScript\JavaScriptServiceProvider::class,
 
 
     ],
