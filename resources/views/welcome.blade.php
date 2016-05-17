@@ -70,6 +70,26 @@
     console.log(user); // User Obj
     console.log(age); // 29
 </script>
+{{--<script>--}}
+
+
+    {{--var pusher = new Pusher("{{env("PUSHER_KEY")}}", {--}}
+        {{--encrypted: true--}}
+    {{--});--}}
+
+
+
+    {{--var channel = pusher.subscribe('test_channel');--}}
+    {{--channel.bind('my_event', function(data) {--}}
+        {{--//console.log(data.text);--}}
+        {{--//toastr.success(data.text, null, {"positionClass": "toast-bottom-left"});--}}
+        {{--alert(data.text);--}}
+        {{--//showNotification(data.text);--}}
+    {{--});--}}
+
+
+
+{{--</script>--}}
 
 
 @endsection

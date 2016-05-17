@@ -44,6 +44,8 @@
 
                                     <div class="panel-body">
                                         <label><h3>Total</h3></label>
+
+
                                         <div class="progress" id="progress-total">
                                             <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="2" aria-valuemax="100" style="min-width: 2em;width: {{($avenants->sum('realise'))/$avenants->sum('objectif')*100}}%">
                                                 {{round(($avenants->sum('realise'))/$avenants->sum('objectif')*100, 2)}}%
@@ -51,17 +53,21 @@
                                         </div>
 
                                         <hr>
+
                                         <br>
                                         <table class="table">
                                             <tr>
                                                 <td>Nombres de ventes :</td>
-                                                <td>{{$ventes->count()}}</td>                                                </tr>
+                                                <td>{{$ventes->count()}}</td>
+                                            </tr>
                                             <tr>
                                                 <td>Chiffre total à faire : </td>
-                                                <td>{{number_format($avenants->sum('objectif'), 2, ',', ' ')}} €</td>                                </tr>
+                                                <td>{{number_format($avenants->sum('objectif'), 2, ',', ' ')}} €</td>
+                                            </tr>
                                             <tr>
                                                 <td>Chiffre total réalisé : </td>
-                                                <td>{{number_format($avenants->sum('realise'), 2, ',', ' ')}} €</td>                                </tr>
+                                                <td>{{number_format($avenants->sum('realise'), 2, ',', ' ')}} €</td>
+                                            </tr>
                                         </table>
                                     </div>
                                 </div>
@@ -71,32 +77,32 @@
                                     <div class="panel-heading"><h4>Trimestre</h4></div>
 
                                     <div class="panel-body">
-                                        T1:
-                                        <div class="progress">
-                                            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="2" aria-valuemax="100" style="min-width: 2em;width: {{$t1}}%">
-                                                {{round($t1)}}%
-                                            </div>
-                                        </div>
-                                        <label>T2</label>
-                                        <div class="progress">
-                                            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="2" aria-valuemax="100" style="min-width: 2em;width: {{$t2}}%">
-                                                {{round($t2)}}%
-                                            </div>
-                                        </div>
-                                        <label>T3</label>
-                                        <div class="progress">
-                                            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="2" aria-valuemax="100" style="min-width: 2em;width: {{$t3}}%">
-                                                {{round($t3)}}%
-                                            </div>
-                                        </div>
-                                        <label>T4</label>
-                                        <div class="progress">
-                                            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="2" aria-valuemax="100" style="min-width: 2em;width: {{$t4}}%">
-                                                {{round($t4)}}%
-                                            </div>
-                                        </div>
+                                        <canvas id="myChart" width="400" height="400"></canvas>
 
                                     </div>
+                                    <script>
+                                        //console.log(trim1);
+                                        var ctx = document.getElementById("myChart");
+                                        var myChart = new Chart(ctx, {
+                                            type: 'bar',
+                                            data: {
+                                                labels: ["t1", "t2", "t3", "t4"],
+                                                datasets: [{
+                                                    label:'% atteint',
+                                                    data: [trim1, trim2, trim3, trim4]
+                                                }]
+                                            },
+                                            options: {
+                                                scales: {
+                                                    yAxes: [{
+                                                        ticks: {
+                                                            beginAtZero:true
+                                                        }
+                                                    }]
+                                                }
+                                            }
+                                        });
+                                    </script>
                                 </div>
                             </div>
                         </div>
@@ -119,7 +125,9 @@
                                                     <td>{{$avenant->produit->mois->label}}</td>
                                                     <td>{{$avenant->produit->support->label}}</td>
                                                     <td><div class="progress">
-                                                            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="min-width: 3em;width:{{($avenant->realise)/($avenant->objectif)*100}}%">{{round(($avenant->realise)/($avenant->objectif)*100,2)}} %</td>
+                                                            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="min-width: 3em;width:{{($avenant->realise)/($avenant->objectif)*100}}%">{{round(($avenant->realise)/($avenant->objectif)*100,2)}} %
+                                                            </div>
+                                                        </div></td>
                                                     <td>{{number_format(($avenant->objectif)-($avenant->realise), 2, ',', ' ')}}</td>
                                                 </tr>
                                             @endif
@@ -137,4 +145,6 @@
             </div>
         </div>
     </div>
+
 @endsection
+@include ('partials.footer')

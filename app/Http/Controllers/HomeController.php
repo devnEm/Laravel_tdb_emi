@@ -11,13 +11,12 @@ use Auth;
 use Carbon\Carbon;
 
 
+use JavaScript;
+
+
 class HomeController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
+
     public function __construct()
     {
         $this->middleware('auth');
@@ -56,10 +55,17 @@ class HomeController extends Controller
         $trim3= (Avenant::where('user_id',$user_id)->whereIn('produit_id',[19,20,21,22,23,24,25,26,27])->sum('realise'))/(Avenant::where('user_id',$user_id)->whereIn('produit_id',[19,20,21,22,23,24,25,26,27])->sum('objectif'))*100;
         $trim4= (Avenant::where('user_id',$user_id)->whereIn('produit_id',[28,29,30,31,32,33,34,35,36])->sum('realise'))/(Avenant::where('user_id',$user_id)->whereIn('produit_id',[28,29,30,31,32,33,34,35,36])->sum('objectif'))*100;
 
-        
 
-        // var_dump($totalGazetteOb);die;
-        
+
+        JavaScript::put([
+            'trim1' => $trim1,
+            'trim2' => $trim2,
+            'trim3' => $trim3,
+            'trim4' => $trim4
+        ]);
+
+
+
         return view('app.home',['avenants'=>$avenants,'ventes'=>$ventes,'month'=>$month,'percentTotalGazette'=>$percentTotalGazette,'percentTotalVerticaux'=>$percentTotalVerticaux,'percentTotalEvenement'=>$percentTotalEvenement,"t1"=>$trim1,"t2"=>$trim2,"t3"=>$trim3,"t4"=>$trim4,]);
 
     }
