@@ -19,6 +19,7 @@
 				<label>{{$request->titre}}</label>
 				<p>emis par : {{$request->user->name}}</p>
 				<p>Message : {{$request->message}}</p>
+				<p>Réponse : {!! $request->reponse !!}</p>
 			</div>
 		</div>
 		
