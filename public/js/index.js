@@ -16,9 +16,9 @@ $(document).ready(function(){
     };
 
     var ctx3 = document.getElementById("avenant").getContext("2d");
-
     var myChart3 = new Chart(ctx3, {
         type: 'bar',
+        showXLabels: 10 ,
         data: {
             labels: dataset_produit,
             datasets: [{
@@ -39,7 +39,7 @@ $(document).ready(function(){
                         beginAtZero:true
                     }
                 }]
-            }
+            }       
         }
     });
 

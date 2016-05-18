@@ -65,7 +65,7 @@
 
                                 <div class="panel-body">
 
-                                <canvas id="avenant" width="400" height="200"></canvas>
+                                <canvas id="avenant" width="800" height="600"></canvas>
                                 
                                 </div>
                             </div>
