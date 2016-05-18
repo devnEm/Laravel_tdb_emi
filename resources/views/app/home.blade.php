@@ -79,7 +79,10 @@
                                                     <td>{{$avenant->produit->mois->label}}</td>
                                                     <td>{{$avenant->produit->support->label}}</td>
                                                     <td><div class="progress">
-                                                            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="min-width: 3em;width:{{($avenant->realise)/($avenant->objectif)*100}}%">{{round(($avenant->realise)/($avenant->objectif)*100,2)}} %</td>
+                                                            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="min-width: 3em;width:{{($avenant->realise)/($avenant->objectif)*100}}%">{{round(($avenant->realise)/($avenant->objectif)*100,2)}} %
+                                                            </div>
+                                                        </div>
+                                                    </td>
                                                     <td>{{number_format(($avenant->objectif)-($avenant->realise), 2, ',', ' ')}}</td>
                                                 </tr>
                                                 @endif
