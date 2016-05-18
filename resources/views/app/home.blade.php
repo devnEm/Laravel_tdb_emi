@@ -64,46 +64,19 @@
                                 <div class="panel-heading"><h4>Chiffres d'Affaire</h4></div>
 
                                 <div class="panel-body">
-                                    <table class="table">
-                                        <thead>
-                                        <td><label>Mois</label></td>
-                                        <td><label>Support</label></td>
-                                        <td><label>Atteints</label></td>
-                                        <td><label>RAF</label></td>
-                                        </thead>
-                                        <tbody>
-                                        @foreach($avenants as $avenant)
-                                            @if(($avenant->produit->mois->id)>= $month)
-                                                @if(($avenant->produit->mois->id)<= $month+3)
-                                                <tr>
-                                                    <td>{{$avenant->produit->mois->label}}</td>
-                                                    <td>{{$avenant->produit->support->label}}</td>
-                                                    <td><div class="progress">
-                                                            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="min-width: 3em;width:{{($avenant->realise)/($avenant->objectif)*100}}%">{{round(($avenant->realise)/($avenant->objectif)*100,2)}} %
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td>{{number_format(($avenant->objectif)-($avenant->realise), 2, ',', ' ')}}</td>
-                                                </tr>
-                                                @endif
-                                            @endif
-                                        @endforeach
-                                        </tbody>
-                                    </table>
+
+                                <canvas id="avenant" width="400" height="200"></canvas>
+                                
                                 </div>
                             </div>
                         </div>
-<script>
-    console.log(foo);
-</script>
-
-
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
 @endsection
 @include('partials.footer')
+
+
 

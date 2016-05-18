@@ -65,8 +65,8 @@ class HomeController extends Controller
             'trim4' => round($trim4,2),
             'gazette' => round($percentTotalGazette,2),
             'verticaux' => round($percentTotalVerticaux,2),
-            'evenement' => round($percentTotalEvenement,2)
-
+            'evenement' => round($percentTotalEvenement,2),
+            'avenants' => $avenants
         ]);
 
         // var_dump($totalGazetteOb);die;
