@@ -24,12 +24,7 @@
                                     <div class="panel-heading"><h4>Commercial</h4></div>
 
                                     <div class="panel-body">
-                                        <label><h3>Total</h3></label>
-                                        <div class="progress" id="progress-total">
-                                            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="2" aria-valuemax="100" style="min-width: 2em;width: {{($avenants->sum('realise'))/$avenants->sum('objectif')*100}}%">
-                                                {{round(($avenants->sum('realise'))/$avenants->sum('objectif')*100, 2)}}%
-                                            </div>
-                                        </div>
+                                        <canvas id="total"></canvas>
 
                                         <hr>
                                         <br>

@@ -1,9 +1,13 @@
 $(document).ready(function(){
 
+    
+
     var avenant=null;
     var dataset_objectif = [];
     var dataset_realise = [];
     var dataset_produit = [];
+    var objectif_Total = 0;
+    var resultat_Courant = 0;
 
     for(i=0;i<avenants.length;i++){
 
@@ -13,7 +17,40 @@ $(document).ready(function(){
         dataset_realise.push(avenant.realise);
         dataset_produit.push(avenant.produit_id);
 
+        objectif_Total = parseInt(objectif_Total) + parseInt(avenant.objectif) ;
+        resultat_Courant = parseInt(resultat_Courant) + parseInt(avenant.realise) ;
+
     };
+
+    console.log(objectif_Total);
+    console.log(resultat_Courant);
+
+    var ctx4 = document.getElementById("total").getContext("2d");
+    var data_total = {
+        labels: [
+            "Objectif",
+            "Atteint"
+        ],
+        datasets: [
+            {
+                data: [objectif_Total, objectif_Total-resultat_Courant],
+                backgroundColor: [
+                    "#FF6384",
+                    "#36A2EB",
+                    "#FFCE56"
+                ],
+                hoverBackgroundColor: [
+                    "#FF6384",
+                    "#36A2EB",
+                    "#FFCE56"
+                ]
+            }]
+    };
+
+    var myPieChart = new Chart(ctx4,{
+        type: 'pie',
+        data: data_total
+    });
 
     var ctx3 = document.getElementById("avenant").getContext("2d");
     var myChart3 = new Chart(ctx3, {
