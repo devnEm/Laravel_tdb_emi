@@ -15,7 +15,7 @@
 
                                     <div class="panel-body">
 
-                                        <canvas id="support" width="400" height="400"></canvas>
+                                        <canvas id="support" width="200" height="200"></canvas>
                                     </div>
                                 </div>
                             </div>
@@ -51,7 +51,7 @@
                                 <div class="panel panel-default">
                                     <div class="panel-heading"><h4>Trimestre</h4></div>
 
-                                    <canvas id="trimestre" width="400" height="400"></canvas>
+                                    <canvas id="trimestre" width="200" height="200"></canvas>
 
                                 </div>
                                 <script>
