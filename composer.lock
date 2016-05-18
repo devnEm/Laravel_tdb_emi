@@ -4,21 +4,21 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "9be57eb9768c2042924f67a66096ea72",
+    "hash": "827bab7133a696e696df2a2ddddaf751",
     "content-hash": "1cff74d481e6ca1fc602918b10873869",
     "packages": [
         {
             "name": "caouecs/laravel-lang",
-            "version": "3.0.3",
+            "version": "3.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/caouecs/Laravel-lang.git",
-                "reference": "dfbeaf02eaecc7718ae142c3fde8c32b8e235eec"
+                "reference": "02a6884abda30314013ccac25b1217a169969a65"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/caouecs/Laravel-lang/zipball/dfbeaf02eaecc7718ae142c3fde8c32b8e235eec",
-                "reference": "dfbeaf02eaecc7718ae142c3fde8c32b8e235eec",
+                "url": "https://api.github.com/repos/caouecs/Laravel-lang/zipball/02a6884abda30314013ccac25b1217a169969a65",
+                "reference": "02a6884abda30314013ccac25b1217a169969a65",
                 "shasum": ""
             },
             "require-dev": {
@@ -45,7 +45,7 @@
                 "laravel",
                 "lpm"
             ],
-            "time": "2016-05-14 13:18:21"
+            "time": "2016-05-16 19:14:02"
         },
         {
             "name": "classpreloader/classpreloader",
