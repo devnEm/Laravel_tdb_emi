@@ -34,7 +34,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-2">
             <div class="panel panel-default">
                 <div class="panel-heading"><h4>Liens</h4></div>
                 @foreach($liens as $lien)
@@ -54,12 +54,13 @@
             </div>
         </div>
         
-
-        @if (Auth::check())
+        @if(Auth::check())
+        @if (Auth::user()->isAdmin)
 
             @include('partials.project_module')
 
         @endif
+            @endif
     </div>
 </div>
 

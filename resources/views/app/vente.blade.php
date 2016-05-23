@@ -49,7 +49,7 @@
 
 
                             
-                            <table class="table">
+                            <table id="myTable" class="table table-condensed">
                                 <thead>
                                 <td><label>Client</label></td>
                                 <td><label>Mois</label></td>
@@ -84,7 +84,7 @@
             </div>
         </div>
     </div>
-
+    {{Html::script('js/index.js')}}
 
 
 @endsection

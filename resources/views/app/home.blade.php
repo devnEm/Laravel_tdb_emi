@@ -77,6 +77,7 @@
             </div>
         </div>
     </div>
+    {{Html::script('js/app.js')}}
 @endsection
 @include('partials.footer')
 

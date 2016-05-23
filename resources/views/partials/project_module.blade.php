@@ -1,8 +1,8 @@
-<div class="col-md-6">
+<div class="col-md-2">
     <div class="panel panel-default">
         <div class="panel-heading"><h4>Les Projets</h4></div>
         <div class="panel-body">
-            <h2>Application de gestion des objectifs commerciaux.</h2>
+            <h4>Application de gestion des objectifs commerciaux.</h4>
             <hr>
             <h4><label>Etat d'avancement : </label></h4>
             <div class="progress">
@@ -17,7 +17,7 @@
                 @endif
             @endforeach
 
-            <h2>Le blog</h2>
+            <h4>Le blog</h4>
             <hr>
             <h4><label>Etat d'avancement : </label></h4>
             <div class="progress">
@@ -31,7 +31,7 @@
                     @include('partials.article_module')
                 @endif
             @endforeach
-            <h2>La Todo-List</h2>
+            <h4>La Todo-List</h4>
             <hr>
             <h4><label>Etat d'avancement : </label></h4>
             <div class="progress">

@@ -77,5 +77,5 @@
             </div>
         </div>
     </div>
-
+    {{Html::script('js/index.js')}}
 @endsection
