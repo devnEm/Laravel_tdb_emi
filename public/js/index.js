@@ -8,7 +8,7 @@ $(document).ready(function(){
             labels: ["T1", "T2", "T3", "T4"],
             datasets: [{
                 label: '% Atteints',
-                backgroundColor: "rgba(255,159,150,0.4)",
+                backgroundColor: "#5CB85C",
                 data: [trim1, trim2, trim3, trim4]
             }]
         },
@@ -16,7 +16,8 @@ $(document).ready(function(){
             scales: {
                 yAxes: [{
                     ticks: {
-                        beginAtZero:true
+                        beginAtZero:true,
+                        max:100
                     }
                 }]
             }
@@ -27,18 +28,19 @@ $(document).ready(function(){
     var myChart2 = new Chart(ctx2, {
         type: 'bar',
         data: {
-            labels: ["Gazette", "Verticaux", "Evenement"],
+            labels: ["Gazette", "Verticaux", "Evenement","TOTAL"],
             datasets: [{
                 label: '% Atteints',
-                backgroundColor: "rgba(255,159,150,0.4)",
-                data: [gazette, verticaux, evenement]
+                backgroundColor: "#5CB85C",
+                data: [gazette, verticaux, evenement,total]
             }]
         },
         options: {
             scales: {
                 yAxes: [{
                     ticks: {
-                        beginAtZero:true
+                        beginAtZero:true,
+                        max:100
                     }
                 }]
             }

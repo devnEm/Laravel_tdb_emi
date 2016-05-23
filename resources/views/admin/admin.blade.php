@@ -67,7 +67,7 @@
                                     <td><strong>{{$request->titre}}</strong></td>
                                     <td><strong>{{$request->user->name}}</strong></td>
                                     <td><strong>{{$request->statut}}</strong></td>
-                                @elseif($request->statut == 'done')
+                                @elseif($request->statut == 'fait')
                                     <td><small><i>{{$request->titre}}</i></small></td>
                                     <td><small><i>{{$request->user->name}}</i></small></td>
                                     <td><small><i>{{$request->statut}}</i></small></td>

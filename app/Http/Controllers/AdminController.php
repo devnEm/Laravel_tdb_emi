@@ -61,7 +61,6 @@ class AdminController extends Controller
 
         $requete->save();
 
-
         return redirect()->action('AdminController@createRequest');
 
     }
@@ -93,7 +92,7 @@ class AdminController extends Controller
         $requete = Requete::where('id',$id)->first();
 
         $requete->reponse=$request->input('reponse');
-        $requete->statut = 'done' ;
+        $requete->statut = 'fait' ;
 
         $requete->update();
 

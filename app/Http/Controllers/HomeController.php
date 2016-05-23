@@ -41,7 +41,7 @@ class HomeController extends Controller
 
         /***************************************
          *
-         * Calcul des objectifs totaux par support
+         * Calcul des objectifs totaux réalisés par support
          *
          * ****************************************/
         $percentTotalGazette=(Avenant::where('user_id',$user_id)->whereIn('produit_id',[1,4,7,10,13,16,19,22,25,28,31,34])->sum('realise'))/(Avenant::where('user_id',$user_id)->whereIn('produit_id',[1,4,7,10,13,16,19,22,25,28,31,34])->sum('objectif'))*100;
@@ -50,13 +50,15 @@ class HomeController extends Controller
 
         /***************************************
          *
-         * Calcul des objectifs totaux par trimestre
+         * Calcul des objectifs totaux réalisés par trimestre
          *
          * ****************************************/
         $trim1= (Avenant::where('user_id',$user_id)->whereIn('produit_id',[1,2,3,4,5,6,7,8,9])->sum('realise'))/(Avenant::where('user_id',$user_id)->whereIn('produit_id',[1,2,3,4,5,6,7,8,9])->sum('objectif'))*100;
         $trim2= (Avenant::where('user_id',$user_id)->whereIn('produit_id',[10,11,12,13,14,15,16,17,18])->sum('realise'))/(Avenant::where('user_id',$user_id)->whereIn('produit_id',[10,11,12,13,14,15,16,17,18])->sum('objectif'))*100;
         $trim3= (Avenant::where('user_id',$user_id)->whereIn('produit_id',[19,20,21,22,23,24,25,26,27])->sum('realise'))/(Avenant::where('user_id',$user_id)->whereIn('produit_id',[19,20,21,22,23,24,25,26,27])->sum('objectif'))*100;
         $trim4= (Avenant::where('user_id',$user_id)->whereIn('produit_id',[28,29,30,31,32,33,34,35,36])->sum('realise'))/(Avenant::where('user_id',$user_id)->whereIn('produit_id',[28,29,30,31,32,33,34,35,36])->sum('objectif'))*100;
+
+        $totalRealise= Avenant::where('user_id',$user_id)->sum('realise')/Avenant::where('user_id',$user_id)->sum('objectif')*100;
 
         JavaScript::put([
             'trim1' => round($trim1,2),
@@ -66,10 +68,9 @@ class HomeController extends Controller
             'gazette' => round($percentTotalGazette,2),
             'verticaux' => round($percentTotalVerticaux,2),
             'evenement' => round($percentTotalEvenement,2),
-            'avenants' => $avenants
+            'total' => $totalRealise
         ]);
 
-        // var_dump($totalGazetteOb);die;
         
         return view('app.home',['avenants'=>$avenants,'ventes'=>$ventes,'month'=>$month,'percentTotalGazette'=>$percentTotalGazette,'percentTotalVerticaux'=>$percentTotalVerticaux,'percentTotalEvenement'=>$percentTotalEvenement,"t1"=>$trim1,"t2"=>$trim2,"t3"=>$trim3,"t4"=>$trim4,]);
 
