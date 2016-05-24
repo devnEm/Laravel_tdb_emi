@@ -34,7 +34,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-2">
+        <div class="col-md-2 col-md-offset-3">
             <div class="panel panel-default">
                 <div class="panel-heading"><h4>Liens</h4></div>
                 @foreach($liens as $lien)

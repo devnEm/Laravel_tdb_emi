@@ -28,7 +28,7 @@
                                             </tr>
                                             <tr>
                                                 <td>R A F : </td>
-                                                <td>{{number_format(($avenants->sum('objectif')-$avenants->sum('realise')), 2, ',', ' ')}} €</td>
+                                                <td>{{number_format($avenants->sum('realise'), 2, ',', ' ')}} €</td>
                                             </tr>
                                         </table>
 
@@ -53,7 +53,7 @@
                                         </thead>
                                         <tbody>
                                         @foreach($avenants as $avenant)
-                                            @if(($avenant->produit->mois->id)>= $month)
+                                            {{--@if(($avenant->produit->mois->id)>= $month)--}}
                                                 <tr>
                                                     <td>{{$avenant->produit->mois->label}}</td>
                                                     <td>{{$avenant->produit->support->label}}</td>
@@ -64,7 +64,7 @@
                                                     </td>
                                                     <td>{{number_format(($avenant->objectif)-($avenant->realise), 2, ',', ' ')}}</td>
                                                 </tr>
-                                            @endif
+                                            {{--@endif--}}
                                         @endforeach
                                         </tbody>
                                     </table>

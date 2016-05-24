@@ -106,9 +106,13 @@ class VenteController extends Controller
 
      public function delete($v)
     {
-        
-        $vente = Vente::where('id',$v)->delete();
-        
+        $user_id= Auth::user()->id;
+
+        $venteToDestroy = Vente::where('id',$v)->first();
+
+        $avenant=Avenant::select('realise')->where('produit_id',$venteToDestroy->produit_id)->where('user_id',$user_id)->decrement('realise', $venteToDestroy->montant);
+
+        $venteToDestroy->delete();
 
         return redirect()->action('VenteController@create');
     }

@@ -36,15 +36,22 @@ class HomeController extends Controller
 
         $month = Carbon::now()->month;
 
-        $ventes= Vente::select()->where('user_id',$user_id)->get();
-        $avenants= Avenant::select()->where('user_id',$user_id)->get();
+        $ventes= Vente::where('user_id',$user_id)->get();
+        $avenants= Avenant::where('user_id',$user_id)->get();
 
         /***************************************
          *
          * Calcul des pourcentage totaux réalisés par support
          *
          * ****************************************/
-        if(Avenant::where('user_id',$user_id)->sum('objectif') == 0)
+
+//        echo('<pre>');
+//        var_dump((Avenant::where('user_id',$user_id)->whereIn('produit_id',[1,4,7,10,13,16,19,22,25,28,31,34])->sum('objectif')));
+//        echo('</pre>');die;
+
+
+
+        if((Avenant::where('user_id',$user_id)->sum('objectif')) == 0)
         {
             $percentTotalGazette= 0;
             $percentTotalVerticaux= 0;
@@ -57,7 +64,7 @@ class HomeController extends Controller
         $percentTotalVerticaux=(Avenant::where('user_id',$user_id)->whereIn('produit_id',[2,5,8,11,14,17,20,23,26,29,32,35])->sum('realise'))/(Avenant::where('user_id',$user_id)->whereIn('produit_id',[2,5,8,11,14,17,20,23,26,29,32,35])->sum('objectif'))*100;
         $percentTotalEvenement=(Avenant::where('user_id',$user_id)->whereIn('produit_id',[3,6,9,12,15,18,21,24,27,30,33,36])->sum('realise'))/(Avenant::where('user_id',$user_id)->whereIn('produit_id',[3,6,9,12,15,18,21,24,27,30,33,36])->sum('objectif'))*100;
 
-        }
+        };
         
         /***************************************
          *
@@ -65,30 +72,21 @@ class HomeController extends Controller
          *
          * ****************************************/
 
-        if(Avenant::where('user_id',$user_id)->sum('objectif') == 0)
-        {
-            $trim1= 0;
-            $trim2= 0;
-            $trim3= 0;
-            $trim4= 0;
-            $totalRealise= 0;
-        }
-        else
-        {
-        $trim1_real= (Avenant::where('user_id',$user_id)->whereIn('produit_id',[1,2,3,4,5,6,7,8,9])->sum('realise'));
-        $trim1_obj = (Avenant::where('user_id',$user_id)->whereIn('produit_id',[1,2,3,4,5,6,7,8,9])->sum('objectif'));
 
-        $trim2_real= (Avenant::where('user_id',$user_id)->whereIn('produit_id',[10,11,12,13,14,15,16,17,18])->sum('realise'));
-        $trim2_obj=(Avenant::where('user_id',$user_id)->whereIn('produit_id',[10,11,12,13,14,15,16,17,18])->sum('objectif'));
+        $trim1_real= Avenant::where('user_id',$user_id)->whereIn('produit_id',[1,2,3,4,5,6,7,8,9])->sum('realise');
+        $trim1_obj = Avenant::where('user_id',$user_id)->whereIn('produit_id',[1,2,3,4,5,6,7,8,9])->sum('objectif');
 
-        $trim3_real= (Avenant::where('user_id',$user_id)->whereIn('produit_id',[19,20,21,22,23,24,25,26,27])->sum('realise'));
-        $trim3_obj=(Avenant::where('user_id',$user_id)->whereIn('produit_id',[19,20,21,22,23,24,25,26,27])->sum('objectif'));
+        $trim2_real= Avenant::where('user_id',$user_id)->whereIn('produit_id',[10,11,12,13,14,15,16,17,18])->sum('realise');
+        $trim2_obj=Avenant::where('user_id',$user_id)->whereIn('produit_id',[10,11,12,13,14,15,16,17,18])->sum('objectif');
 
-        $trim4_real= (Avenant::where('user_id',$user_id)->whereIn('produit_id',[28,29,30,31,32,33,34,35,36])->sum('realise'));
-        $trim4_obj=(Avenant::where('user_id',$user_id)->whereIn('produit_id',[28,29,30,31,32,33,34,35,36])->sum('objectif'));
+        $trim3_real= Avenant::where('user_id',$user_id)->whereIn('produit_id',[19,20,21,22,23,24,25,26,27])->sum('realise');
+        $trim3_obj=Avenant::where('user_id',$user_id)->whereIn('produit_id',[19,20,21,22,23,24,25,26,27])->sum('objectif');
+
+        $trim4_real= Avenant::where('user_id',$user_id)->whereIn('produit_id',[28,29,30,31,32,33,34,35,36])->sum('realise');
+        $trim4_obj=Avenant::where('user_id',$user_id)->whereIn('produit_id',[28,29,30,31,32,33,34,35,36])->sum('objectif');
 
         $totalRealise= Avenant::where('user_id',$user_id)->sum('realise')/Avenant::where('user_id',$user_id)->sum('objectif')*100;
-        }
+
 
         JavaScript::put([
             'trim1_real' => round($trim1_real,2),
