@@ -41,7 +41,7 @@ class HomeController extends Controller
 
         /***************************************
          *
-         * Calcul des objectifs totaux réalisés par support
+         * Calcul des pourcentage totaux réalisés par support
          *
          * ****************************************/
         if(Avenant::where('user_id',$user_id)->sum('objectif') == 0)
@@ -75,19 +75,30 @@ class HomeController extends Controller
         }
         else
         {
-        $trim1= (Avenant::where('user_id',$user_id)->whereIn('produit_id',[1,2,3,4,5,6,7,8,9])->sum('realise'))/(Avenant::where('user_id',$user_id)->whereIn('produit_id',[1,2,3,4,5,6,7,8,9])->sum('objectif'))*100;
-        $trim2= (Avenant::where('user_id',$user_id)->whereIn('produit_id',[10,11,12,13,14,15,16,17,18])->sum('realise'))/(Avenant::where('user_id',$user_id)->whereIn('produit_id',[10,11,12,13,14,15,16,17,18])->sum('objectif'))*100;
-        $trim3= (Avenant::where('user_id',$user_id)->whereIn('produit_id',[19,20,21,22,23,24,25,26,27])->sum('realise'))/(Avenant::where('user_id',$user_id)->whereIn('produit_id',[19,20,21,22,23,24,25,26,27])->sum('objectif'))*100;
-        $trim4= (Avenant::where('user_id',$user_id)->whereIn('produit_id',[28,29,30,31,32,33,34,35,36])->sum('realise'))/(Avenant::where('user_id',$user_id)->whereIn('produit_id',[28,29,30,31,32,33,34,35,36])->sum('objectif'))*100;
+        $trim1_real= (Avenant::where('user_id',$user_id)->whereIn('produit_id',[1,2,3,4,5,6,7,8,9])->sum('realise'));
+        $trim1_obj = (Avenant::where('user_id',$user_id)->whereIn('produit_id',[1,2,3,4,5,6,7,8,9])->sum('objectif'));
+
+        $trim2_real= (Avenant::where('user_id',$user_id)->whereIn('produit_id',[10,11,12,13,14,15,16,17,18])->sum('realise'));
+        $trim2_obj=(Avenant::where('user_id',$user_id)->whereIn('produit_id',[10,11,12,13,14,15,16,17,18])->sum('objectif'));
+
+        $trim3_real= (Avenant::where('user_id',$user_id)->whereIn('produit_id',[19,20,21,22,23,24,25,26,27])->sum('realise'));
+        $trim3_obj=(Avenant::where('user_id',$user_id)->whereIn('produit_id',[19,20,21,22,23,24,25,26,27])->sum('objectif'));
+
+        $trim4_real= (Avenant::where('user_id',$user_id)->whereIn('produit_id',[28,29,30,31,32,33,34,35,36])->sum('realise'));
+        $trim4_obj=(Avenant::where('user_id',$user_id)->whereIn('produit_id',[28,29,30,31,32,33,34,35,36])->sum('objectif'));
 
         $totalRealise= Avenant::where('user_id',$user_id)->sum('realise')/Avenant::where('user_id',$user_id)->sum('objectif')*100;
         }
 
         JavaScript::put([
-            'trim1' => round($trim1,2),
-            'trim2' => round($trim2,2),
-            'trim3' => round($trim3,2),
-            'trim4' => round($trim4,2),
+            'trim1_real' => round($trim1_real,2),
+            'trim2_real' => round($trim2_real,2),
+            'trim3_real' => round($trim3_real,2),
+            'trim4_real' => round($trim4_real,2),
+            'trim1_obj' => round($trim1_obj,2),
+            'trim2_obj' => round($trim2_obj,2),
+            'trim3_obj' => round($trim3_obj,2),
+            'trim4_obj' => round($trim4_obj,2),
             'gazette' => round($percentTotalGazette,2),
             'verticaux' => round($percentTotalVerticaux,2),
             'evenement' => round($percentTotalEvenement,2),
@@ -95,7 +106,7 @@ class HomeController extends Controller
         ]);
 
         
-        return view('app.home',['avenants'=>$avenants,'ventes'=>$ventes,'month'=>$month,'percentTotalGazette'=>$percentTotalGazette,'percentTotalVerticaux'=>$percentTotalVerticaux,'percentTotalEvenement'=>$percentTotalEvenement,"t1"=>$trim1,"t2"=>$trim2,"t3"=>$trim3,"t4"=>$trim4,]);
+        return view('app.home',['avenants'=>$avenants,'ventes'=>$ventes,'month'=>$month,'percentTotalGazette'=>$percentTotalGazette,'percentTotalVerticaux'=>$percentTotalVerticaux,'percentTotalEvenement'=>$percentTotalEvenement]);
 
     }
 
