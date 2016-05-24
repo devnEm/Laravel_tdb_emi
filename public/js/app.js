@@ -1,5 +1,6 @@
 $(document).ready(function() {
 
+    // $('#myTable').DataTable();
 
     var ctx1 = document.getElementById("trimestre");
     var myChart1 = new Chart(ctx1, {

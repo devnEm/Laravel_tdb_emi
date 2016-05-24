@@ -17,7 +17,7 @@
 
                                         <canvas id="trimestre" width="200" height="200"></canvas>
 
-                                        <table class="table">
+                                        <table id="myTable" class="table">
                                             <tr>
                                                 <td>Ventes :</td>
                                                 <td>{{$ventes->count()}}</td>
@@ -44,7 +44,7 @@
                                 <div class="panel-heading"><h4>Chiffres d'Affaire</h4></div>
 
                                 <div class="panel-body">
-                                    <table class="table">
+                                    <table id="myTable" class="table">
                                         <thead>
                                         <td><label>Mois</label></td>
                                         <td><label>Support</label></td>
