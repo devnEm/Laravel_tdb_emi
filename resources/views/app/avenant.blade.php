@@ -36,6 +36,8 @@
                         </table>
                         </div>
                         </div>
+                </div>
+            <div class="col-md-6">
                         
 
                         <div class="panel panel-default">
@@ -80,6 +82,5 @@
                     </div>
                 </div>
             </div>
-        </div>
     {{Html::script('js/index.js')}}
 @endsection
