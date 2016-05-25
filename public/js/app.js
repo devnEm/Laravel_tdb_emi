@@ -17,34 +17,34 @@ $(document).ready(function() {
     }else{
 
         if(trim1_real >= trim1_obj){
-            bonus1 = Math.round((trim1_real - trim1_obj));
+            bonus1 = trim1_real - trim1_obj;
             trim1= 100;         
         }else{
             trim1 = Math.round(trim1_real/trim1_obj*100);
-        };
+        }
      
         if((trim2_real+bonus1) >= trim2_obj){
-            bonus2= Math.round((trim2_real + bonus1 - trim2_obj));
-            bonus1=0;
+            bonus2 = trim2_real + bonus1 - trim2_obj;
+            bonus1 = 0;
             trim2 = 100;
         }else{
             trim2 = Math.round(trim2_real/trim2_obj*100);
-        };
+        }
 
         if((trim3_real+bonus2) >= trim3_obj){
-            bonus3= Math.round((trim3_real + bonus2 - trim3_obj));
-            bonus2=0;
+            bonus3 = trim3_real + bonus2 - trim3_obj;
+            bonus2 = 0;
             trim3 = 100;
         }else{
             trim3 = Math.round(trim3_real/trim3_obj*100);
-        };
+        }
 
         if((trim4_real+bonus3) >= trim4_obj){
-            bonus3=0;
+            bonus3 = 0;
             trim4 = 100;
         }else{
             trim4 = Math.round(trim4_real/trim4_obj*100);
-        };
+        }
 
     }
 
@@ -57,18 +57,18 @@ $(document).ready(function() {
             datasets: [{
                 label: '% Atteints',
                 backgroundColor: "#5CB85C",
-                data: [trim1, trim2, trim3, trim4],
+                data: [trim1, trim2, trim3, trim4]
 
             },{
                 label:'% bonus',
                 backgroundColor: '#F2FF29',
-                data:[0,bonus1/trim1_obj*100,bonus2/trim2_obj*100,bonus3/trim3_obj*100]
+                data:[0,Math.round(bonus1/trim1_obj*100),Math.round(bonus2/trim2_obj*100),Math.round(bonus3/trim3_obj*100)]
             }]
         },
         options: {
             scales: {
                 xAxes: [{
-                    stacked:true,
+                    stacked:true
                 }],
                 yAxes: [{
                     stacked:true,
