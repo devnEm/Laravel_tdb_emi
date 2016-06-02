@@ -16,11 +16,16 @@ elixir(function(mix) {
             [
             'app.scss'
             ],
-            'public/css/app.css')
-        .sass(
+            'public/css/app.css');
+    mix.sass(
             [
             'admin.scss',
             ],
             'public/css/admin.css');
+    mix.sass(
+            [
+            'cv.scss',
+            ],
+            'public/css/cv.css');
 
 });

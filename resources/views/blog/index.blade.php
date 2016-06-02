@@ -39,7 +39,7 @@
             @if(Auth::check())
                 @if (Auth::user()->isAdmin)
 
-                    @include('partials.project_module')
+                    @include('partials.admin.project_module')
 
                 @endif
             @endif

@@ -43,6 +43,7 @@
                     <!-- Right Side Of Navbar -->
             <ul class="nav navbar-nav navbar-right">
                 <!-- Authentication Links -->
+                <li><a href="{{ url('/cv') }}">Qui suis-je ?</a></li>
                 @if (Auth::guest())
                     <li><a href="{{ url('/login') }}">Se connecter</a></li>
                     <li><a href="{{ url('/register') }}">Créer un compte</a></li>

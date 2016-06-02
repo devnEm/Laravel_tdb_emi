@@ -72,6 +72,7 @@
     <div id="page-wrapper">
     @yield('content')
     </div>
+    @include('partials.footer')
 
 
 

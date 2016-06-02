@@ -18,6 +18,8 @@ class WelcomeController extends Controller
 
         return view('welcome', ['posts'=>$posts,'liens'=>$liens]);
     }
-
+    public function cv(){
+        return view ('cv');
+    }
     
 }
