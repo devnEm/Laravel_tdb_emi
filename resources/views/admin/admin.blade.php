@@ -1,8 +1,9 @@
 @extends('layouts.adminLayout')
 
 @section('content')
-    <div class="container">
-        <div class="row">
+
+<div class="container">
+    <div class="row">
             <div class="col-md-4">
             <div class="panel panel-default">
             <label>Mes utilisateurs</label>
@@ -31,10 +32,10 @@
                     <thead>
                         <td>Nom</td>
                         <td>lien</td>
-                        
+
                     </thead>
                     <tbody>
-                        
+
 
                             @foreach($liens as $lien)
                                 <tr>
@@ -43,7 +44,7 @@
                                 </tr>
                             @endforeach
 
-                        
+
                     </tbody>
                 </table>
             </div>
@@ -90,6 +91,7 @@
         <div class="row">
 
         </div>
-    </div>
+</div>
+
     {{Html::script('js/index.js')}}
 @endsection

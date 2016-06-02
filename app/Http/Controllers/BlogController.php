@@ -15,6 +15,11 @@ use Validator;
 class BlogController extends Controller
 {
 
+    public function index(){
+        $posts = Post::all();
+        $categories = Categorie::all();
+        return view('blog.index',['posts'=>$posts,'categories'=>$categories]);
+    }
 
     public function redaction()
     {

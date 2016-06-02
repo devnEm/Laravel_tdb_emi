@@ -1,67 +1,14 @@
-@extends('layouts.adminLayout')
+@extends('layouts.welcomeLayout')
 
 @section('content')
-<div class="container">
-    @if (session('status'))
-        <div class="alert alert-success">
-            {{ session('status') }}
-        </div>
-    @endif
-    <div class="row">
-        <div class="col-md-6">
-            <div class="panel panel-default">
-                <div class="panel-heading"><h4>Bienvenue</h4></div>
 
-                <div class="panel-body">
-
-                    @foreach ($posts as $post)
-
-                        @if($post->categorie->label !== 'commercial')
-                        
-                            @if(Auth::check())
-
-
-                                @include('partials.article_module')
-
-                            @elseif($post->isPublic)
-
-                                @include('partials.article_module')
-
-                        
-                            @endif
-                        @endif
-                    @endforeach
-                </div>
+    <div class="col-md-6 col-md-offset-3">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <h1>Là !!! Ou tout converge</h1>
             </div>
         </div>
-        <div class="col-md-2 col-md-offset-3">
-            <div class="panel panel-default">
-                <div class="panel-heading"><h4>Liens</h4></div>
-                @foreach($liens as $lien)
-                    <ul class="nav">
-
-                        @if($lien->statut == 'isPublic')
-
-                            <li><a href="{{$lien->url}}" target="blank" alt='{{$lien->titre}}' class="btn btn-info">{{$lien->titre}}</a></li>
-
-
-                        @endif
-
-                    </ul>
-                @endforeach
-                <div class="panel-body">
-                </div>
-            </div>
-        </div>
-        
-        @if(Auth::check())
-        @if (Auth::user()->isAdmin)
-
-            @include('partials.project_module')
-
-        @endif
-            @endif
     </div>
-</div>
+
 
 @endsection

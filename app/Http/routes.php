@@ -18,6 +18,7 @@ Carbon::setLocale('fr');
 Route::group(['middleware' => ['web']], function () {
 
     Route::get('/', 'WelcomeController@welcome');
+    Route::get('/blog', 'BlogController@index');
     Route::get('redaction/article/{id}', 'BlogController@showPost');
     Route::get('verification/error', 'Auth\AuthController@getVerificationError');
     Route::get('verification/{token}', 'Auth\AuthController@getVerification');

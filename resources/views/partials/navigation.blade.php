@@ -35,6 +35,10 @@
                     </ul>
 
                 @endif
+            @else
+                <ul class="nav navbar-nav">
+                    <li><a href="{{ url('/blog') }}"><i class="fa fa-btn"></i>Blog</a></li>
+                </ul>
             @endif
                     <!-- Right Side Of Navbar -->
             <ul class="nav navbar-nav navbar-right">
