@@ -1,10 +1,10 @@
-@extends('layouts.adminLayout')
+@extends('layouts.admin')
 
 @section('content')
 
-<div class="container">
+
     <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-12">
             <div class="panel panel-default">
             <label>Mes utilisateurs</label>
                 <table class="table">
@@ -25,6 +25,8 @@
                 </table>
             </div>
             </div>
+    </div>
+    <div class="row">
             <div class="col-md-4">
             <div class="panel panel-default">
                 <label>Mes liens</label>
@@ -91,7 +93,7 @@
         <div class="row">
 
         </div>
-</div>
+
 
     {{Html::script('js/index.js')}}
 @endsection
