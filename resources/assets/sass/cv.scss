@@ -1,19 +1,26 @@
-body{
-  background: #611427 ;
-  //color: #1D2326;
-  color:white;
-}
-.container {
-  padding:10px;
-  background: #DDDCC5 ;
-  //background: #611427 ;
-}
-.panel-body{
-  background: #6A6A61;
-}
-.panel-default>.panel-heading{
-  background: #958976;
-}
-.panel-default{
-  border: #611427;
-}
+@import "customColors";
+
+$body-bg:$fifthBlue ;
+$text-color: $primaryBlue;
+
+$link-hover-color:$primaryBlue;
+$link-color:$primaryBlue;
+
+$panel-default-text : $myWhite;
+$panel-bg : $myWhite;
+$panel-default-heading-bg: $primaryBlue;
+$panel-inner-border: $primaryBlue;
+$panel-default-border: $primaryBlue;
+
+$navbar-default-bg: $primaryBlue;
+$navbar-default-link-color : $myWhite;
+$navbar-default-link-hover-color : $primaryBlue;
+$navbar-default-link-hover-bg:$myWhite;
+$navbar-default-brand-hover-color : $primaryBlue;
+$navbar-default-brand-hover-bg:$myWhite;
+
+$progress-bg: $grey2;
+$progress-bar-color:$myWhite;
+
+$gray-base:#00002B;
+@import "../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap";

@@ -41,14 +41,24 @@
 </head>
 <body>
 
+@include("partials.navigation")
+
 <div class="container">
     <div class="row">
         <div class="col-md-12">
             <div class="panel panel-default">
                 <div class="panel-body">
-                    <h1>VANÈME Aymeric</h1>
-                    <p>Concepteur Developpeur Informatique</p>
+                    <div class="col-md-6"><h1>VANÈME Aymeric</h1>
+                        <p>Concepteur Developpeur Informatique</p></div>
+                    <div class="col-md-6"><div>
+                            <img src="../public/img/Facebook.png">
+                            <img src="../public/img/GitHub.png">
+                            <img src="../public/img/LinkedIn.png">
+                        </div></div>
+
+
                 </div>
+                
             </div>
         </div>
     </div>
@@ -83,40 +93,39 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Parcours</div>
                 <div class="panel-body">
-                    <ul>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a data-toggle="tab" href="#pres">Présentation</a></li>
+                        <li><a data-toggle="tab" href="#dev">Développement</a></li>
+                        <li><a data-toggle="tab" href="#rec">Recrutement</a></li>
+                        <li><a data-toggle="tab" href="#telec">Télécommunications</a></li>
                     </ul>
-                    <ul>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                    </ul>
+                    <div class="tab-content">
+                        <div id="pres" class="tab-pane fade in active">
+                            <article><h1>Disponibilité : septembre 2016</h1><p>Après 18 années de service en qualité de sous-officier de l’arme des Transmissions spécialisé dans la mise en place et la gestion des réseaux de commutation, j’ai pris la décision de mettre un terme à cette aventure.</p><p>Accompagné lors du retour à « la vie civile » par l’Agence de Reconversion de la Défense, j’ai pu présenter un projet de formation en développement informatique.</p><p>Bidouilleur informatique, je voulais connaitre et maitriser les outils que j’utilisais au quotidien. Une enquête de terrain par le biais d’entretien avec d’autres développeurs m’ont conforté dans mon choix.</p><p>J’ai donc effectué les démarches de recherche des formations et ai choisi Next-Formation qui présentait un programme de formation qui correspondait à mes attentes.</p></article>
+                        </div>
+                        <div id="dev" class="tab-pane fade">
+                            <ul>
+                                <li><span>NetCat_</span><p>Stage conception plateforme web</p></li>
+                                <li><span>Next Formation</span><p>Formation Concepteur Développeur Informatique</p></li>
+                            </ul>
+                        </div>
+                        <div id="rec" class="tab-pane fade">
+                            <ul>
+                                <li><span>Groupement Recrutement Sélection IDF</span><p>Sous-officier traitant des chiffres du recrutement</p></li>
+                                <li><span>Centre d'Information et de Recrutement des Forces Armées</span><p>Conseiller en recrutement</p></li>
+                            </ul>
+                        </div>
+                        <div id="telec" class="tab-pane fade">
+                            <ul>
+                                <li><span>Groupement Recrutement Sélection IDF</span><p>Responsable des Systèmes d'Information et de Communication</p></li>
+                                <li><span>41ème Régiment de Transmissions</span><p>Chef de station commutation</p></li>
+                                <li><span>28ème Régiment de Transmissions</span><p>Chef de station commutation</p></li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="panel panel-default">
-                <div class="panel-body">
-                    <ul>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                    </ul>
-                    <ul>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                    </ul>
-                </div>
-            </div>
+
         </div>
     </div>
 </div>
