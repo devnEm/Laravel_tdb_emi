@@ -3,8 +3,8 @@
 $body-bg:$fifthBlue ;
 $text-color: $primaryBlue;
 
-$link-hover-color:$primaryBlue;
-$link-color:$primaryBlue;
+//$link-hover-color:$primaryBlue;
+//$link-color:$primaryBlue;
 
 $panel-default-text : $myWhite;
 $panel-bg : $myWhite;
@@ -23,4 +23,6 @@ $progress-bg: $grey2;
 $progress-bar-color:$myWhite;
 
 $gray-base:#00002B;
+$font-size-base:20px;
+
 @import "../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap";

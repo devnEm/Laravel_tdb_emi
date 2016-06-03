@@ -9,6 +9,7 @@ use App\Http\Requests;
 use App\Models\Post;
 use App\Models\Lien;
 
+
 class WelcomeController extends Controller
 {
     public function welcome()
@@ -16,7 +17,8 @@ class WelcomeController extends Controller
         $liens= Lien::all();
         $posts = Post::all();
 
-        return view('welcome', ['posts'=>$posts,'liens'=>$liens]);
+
+        return view('welcome', ['liens'=>$liens,'posts'=>$posts]);
     }
     public function cv(){
         return view ('cv');
