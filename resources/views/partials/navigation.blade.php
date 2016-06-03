@@ -23,7 +23,7 @@
                 @if (Auth::user()->isAdmin)
                     <ul class="nav navbar-nav">
                         <li><a href="{{ url('/admin/index') }}">Admin</a></li>
-                        <li><a href="{{ url('/redaction/index') }}">Redaction</a></li>
+                        <li><a href="{{ url('/redaction/index') }}">Rédaction</a></li>
                         {{--<li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>--}}
                     </ul>
                     @else

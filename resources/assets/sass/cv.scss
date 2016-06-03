@@ -1,7 +1,8 @@
 @import "customColors";
 
-$body-bg:$fifthBlue ;
-$text-color: $primaryBlue;
+$body-bg:$fouthBlue ;
+$gray-base:$primaryBlue;
+$font-size-base:18px;
 
 //$link-hover-color:$primaryBlue;
 //$link-color:$primaryBlue;
@@ -9,7 +10,7 @@ $text-color: $primaryBlue;
 $panel-default-text : $myWhite;
 $panel-bg : $myWhite;
 $panel-default-heading-bg: $primaryBlue;
-$panel-inner-border: $primaryBlue;
+$panel-inner-border: $redInfopro;
 $panel-default-border: $primaryBlue;
 
 $navbar-default-bg: $primaryBlue;
@@ -22,7 +23,8 @@ $navbar-default-brand-hover-bg:$myWhite;
 $progress-bg: $grey2;
 $progress-bar-color:$myWhite;
 
-$gray-base:#00002B;
-$font-size-base:20px;
+body{
+  background-image: url("http://localhost/Framewok/Laravel_DB/DashBoardEmilie/public/img/blue-background.jpg");
+}
 
 @import "../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
