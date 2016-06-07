@@ -48,8 +48,9 @@
         <div class="col-md-12">
             <div class="panel panel-default">
                 <div class="panel-body">
-                    <div class="col-md-6"><h1>VANÈME Aymeric</h1>
-                        <p>Concepteur Développeur Informatique <a href="http://www.rncp.cncp.gouv.fr/grand-public/visualisationFiche?format=fr&fiche=6255" target="_blank">  * </a> </p>
+                    <div class="col-md-6">
+                        <h1>VANÈME Aymeric</h1>
+                        <h4>Concepteur Développeur Informatique <a href="http://www.rncp.cncp.gouv.fr/grand-public/visualisationFiche?format=fr&fiche=6255" target="_blank">  * </a> </h4>
 
                     </div>
 
@@ -85,11 +86,11 @@
                 <div class="panel-heading">Compétences</div>
                 <div class="panel-body">
                     <ul class="nav navbar">
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
+                        <li>PHP</li><img src="../public/img/star.png"><img src="../public/img/star.png"><img src="../public/img/star.png"><img src="../public/img/empty_star.png"><img src="../public/img/empty_star.png">
+                        <li>JAVA</li><img src="../public/img/star.png"><img src="../public/img/star.png"><img src="../public/img/star.png"><img src="../public/img/empty_star.png"><img src="../public/img/empty_star.png">
+                        <li>HTML/CSS</li><img src="../public/img/star.png"><img src="../public/img/star.png"><img src="../public/img/empty_star.png"><img src="../public/img/empty_star.png"><img src="../public/img/empty_star.png">
+                        <li>UI/UX</li><img src="../public/img/star.png"><img src="../public/img/star.png"><img src="../public/img/empty_star.png"><img src="../public/img/empty_star.png"><img src="../public/img/empty_star.png">
+                        <li>SQL/MONGO</li><img src="../public/img/star.png"><img src="../public/img/star.png"><img src="../public/img/star.png"><img src="../public/img/empty_star.png"><img src="../public/img/empty_star.png">
                     </ul>
                 </div>
             </div>
@@ -117,26 +118,61 @@
                                 </div>
                             </div>
                         </div>
+                        <!-- DEVELOPPEMENT -->
                         <div id="dev" class="tab-pane fade">
                             <div class="panel panel-default">
                                 <div class="panel-body">
                                     <ul class="nav navbar">
-                                        <li><span>NetCat_</span><p>Stage conception plateforme web</p></li>
-                                        <li><span>Next Formation</span><p>Formation Concepteur Développeur Informatique</p></li>
+                                        <li>
+                                            <h3><label>Stage conception plateforme web</label></h3>
+                                            <p>
+                                                <em>NetCat_</em><br>
+                                                <small> Date : mars 2016 - avril 2016</small>
+                                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore nihil recusandae repellat similique sint? Aspernatur aut consequuntur culpa, ea enim et expedita facilis fugit neque non perspiciatis, saepe vitae voluptatem.</p>
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <h3><label>Formation Concepteur Développeur Informatique</label></h3>
+                                            <p>
+                                                <em>Next Formation</em>
+                                                <br>
+                                                <small> Date : mars 2016 - avril 2016</small>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore nihil recusandae repellat similique sint? Aspernatur aut consequuntur culpa, ea enim et expedita facilis fugit neque non perspiciatis, saepe vitae voluptatem.</p>
+                                            </p>
+                                        </li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
+                        <!-- RECRUTEMENT -->
                         <div id="rec" class="tab-pane fade">
                             <div class="panel panel-default">
                                 <div class="panel-body">
                                     <ul class="nav navbar">
-                                        <li><span>Groupement Recrutement Sélection IDF</span><p>Sous-officier traitant des chiffres du recrutement</p></li>
-                                        <li><span>Centre d'Information et de Recrutement des Forces Armées</span><p><a href="http://www.defense.gouv.fr/actualites/la-vie-du-ministere/conseiller-en-recrutement-detecteur-de-talents" target="_blank">Conseiller en recrutement</a></p></li>
+                                        <li>
+                                            <h3><label>Sous-officier traitant des chiffres du recrutement</label></h3>
+                                            <p>
+                                                <em>Groupement Recrutement Sélection IDF</em>
+                                                <br>
+                                                <small> Date : mars 2016 - avril 2016</small>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore nihil recusandae repellat similique sint? Aspernatur aut consequuntur culpa, ea enim et expedita facilis fugit neque non perspiciatis, saepe vitae voluptatem.</p>
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <h3><label>Sous-officier traitant des chiffres du recrutement</label></h3>
+                                            <p>
+                                                <em>Centre d'Information et de Recrutement des Forces Armées</em>
+                                                <br>
+                                                <small> Date : mars 2016 - avril 2016</small>
+                                            <p>
+                                            <p><a href="http://www.defense.gouv.fr/actualites/la-vie-du-ministere/conseiller-en-recrutement-detecteur-de-talents" target="_blank">Conseiller en recrutement</a>
+                                            </p>
+                                        </li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
+                        <!-- TELECOMMUNICATIONS -->
                         <div id="telec" class="tab-pane fade">
                             <div class="panel panel-default">
                                 <div class="panel-body">
